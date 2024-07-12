@@ -27,11 +27,11 @@ const page = () => {
       <main className="container mx-auto my-10 px-6">
         <section id="home" className="text-center">
           <div className="text-white" style={{
-        backgroundImage: "linear-gradient(to right, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8)), url('/banner-bg.png')",
+        backgroundImage: "linear-gradient(to right, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8))",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         }}>
-            <h1 className="text-5xl font-bold mb-6 text-white pt-24">Transform Your Images with AI</h1>
+            <h1 className="text-5xl font-bold mb-6 text-white pt-24">Transform Your Images with AI Tools</h1>
             <p className="text-xl mb-6 text-white">AI-powered tools to enhance, edit, and transform your photos effortlessly.</p>
             <a href="#signup" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full">Get Started Now</a>
           </div>
@@ -80,7 +80,7 @@ const page = () => {
       </main>
 
       <footer className="text-white" style={{
-        backgroundImage: "linear-gradient(to right, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8)), url('/banner-bg.png')",
+        backgroundImage: "linear-gradient(to right, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8))",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         }}>
