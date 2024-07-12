@@ -8,7 +8,7 @@ import {dark} from "@clerk/themes"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Imagica",
+  title: "ImageWizard",
   description: "AI tool for images",
   icons: "/logo.png"
 };

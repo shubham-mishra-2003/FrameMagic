@@ -5,7 +5,7 @@ import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dashboard | Imagica",
+  title: "Dashboard | Image Wizard",
   description: "AI tool for images",
   icons: "/logo.png"
 };
