@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Imagica",
@@ -13,6 +14,6 @@ export default function HomeLayout({
 }>) {
 
   return (
-      <div>{children}</div>
+      <ThemeProvider>{children}</ThemeProvider>
   );
 }

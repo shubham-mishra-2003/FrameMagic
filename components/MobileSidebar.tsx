@@ -21,7 +21,7 @@ const MobileSidebar = () => {
         <AlignCenter />
       </SheetTrigger>
       <SheetContent
-        className={`flex p-2 max-w-96 flex-col ${resolvedTheme == "dark"
+        className={`flex p-0 max-w-96 flex-col ${resolvedTheme == "dark"
           ? "bg-black"
           : "bg-slate-200"}`}
       >
@@ -30,7 +30,7 @@ const MobileSidebar = () => {
           <div className="bg-gray-500 w-full flex h-[1px] rounded-lg" />
         </SheetHeader>
         <SheetDescription className="h-full overflow-y-auto">
-          <ul className="gap-4 pb-2 flex flex-col h-full overflow-y-auto justify-start items-center">
+          <ul className="gap-4 px-1 pb-2 flex flex-col h-full overflow-y-auto justify-start items-center">
             {navLinks.map(link =>
               <li
                 key={link.title}
