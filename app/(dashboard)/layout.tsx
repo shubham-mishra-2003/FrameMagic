@@ -1,6 +1,7 @@
 import DashboardHeader from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { auth } from "@clerk/nextjs/server";
+import { ThemeProvider } from "next-themes";
 
 export default function Dashboardlayout({
   children
@@ -10,14 +11,16 @@ export default function Dashboardlayout({
   auth().protect();
 
   return (
-    <div>
-      <DashboardHeader />
-      <div className="flex">
-        <Sidebar />
-        <div className="pt-20">
-          {children}
+    <ThemeProvider>
+      <div className="h-screen flex flex-col">
+        <DashboardHeader />
+        <div className="flex flex-1 overflow-hidden">
+          <Sidebar />
+          <div className="flex-1 overflow-auto pt-20">
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }

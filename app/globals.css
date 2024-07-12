@@ -11,22 +11,21 @@
 }
 
 *::-webkit-scrollbar {
-  display: none;
+  height: 100%;
+  width: 3px;
 }
-/* *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: #f1f1f1; 
 }
 *::-webkit-scrollbar-thumb {
   background: #374151;
-  border-radius: 9px;
 }
 *::-webkit-scrollbar-thumb:hover {
   background: #2d3643; 
 }
 *::-webkit-scrollbar-corner {
   background: #f1f1f1;
-  border-radius: 10px;
-} */
+}
 
 
 .dark-theme {

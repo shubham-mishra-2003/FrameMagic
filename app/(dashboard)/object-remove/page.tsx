@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const objectRemove = () => {
-  return (
-    <div>
-      objectRemove
-    </div>
-  )
-}
+  return <div className="flex justify-center items-center">objectRemove</div>;
+};
 
-export default objectRemove
+export default objectRemove;

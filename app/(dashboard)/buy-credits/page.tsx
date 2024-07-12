@@ -2,7 +2,7 @@ import React from 'react'
 
 const buyCredits = () => {
   return (
-    <div>
+    <div className='flex justify-center items-center'>
       buyCredits
     </div>
   )
