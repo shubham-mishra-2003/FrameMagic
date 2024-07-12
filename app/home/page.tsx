@@ -2,6 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
+<<<<<<< HEAD
     <div>
       <header className="text-white" style={{
         backgroundImage: "linear-gradient(to right, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8))",
@@ -92,6 +93,10 @@ const page = () => {
           </nav>
         </div>
       </footer>
+=======
+    <div className='flex justify-center items-center'>
+      Home
+>>>>>>> d905a26795b42968be5505e901cd09bb879f80f7
     </div>
   )
 }

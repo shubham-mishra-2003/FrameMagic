@@ -31,6 +31,7 @@
       --chart-5: 27 87% 67%;
     }
 
+<<<<<<< HEAD
     .dark {
       --background: 222.2 84% 4.9%;
       --foreground: 210 40% 98%;
@@ -67,3 +68,36 @@
       @apply bg-background text-foreground;
     }
   }
+=======
+*::-webkit-scrollbar {
+  height: 100%;
+  width: 3px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+*::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #2d3643; 
+}
+*::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
+
+
+.dark-theme {
+  background-color: #000000;
+  color: ivory;
+}
+
+.light-theme {
+  background: ivory;
+  color: #000;
+}
+
+.cl-internal-11ttlho, .cl-internal-180wb59, .cl-internal-180wb59, .cl-internal-lqfubk{
+  display: none;
+}
+>>>>>>> d905a26795b42968be5505e901cd09bb879f80f7
