@@ -32,8 +32,8 @@ const Sidebar = () => {
               href={`/${link.href}`}
               className={`text-lg w-full flex justify-between gap-10 items-center rounded-full p-5 ${resolvedTheme ==
               "dark"
-                ? "hover:bg-gray-800 bg-gray-900 text-white"
-                : "bg-slate-200 text-black hover:bg-slate-300"}`}
+                ? "hover:bg-blue-600 bg-gray-900 text-white"
+                : "bg-slate-200 text-black hover:bg-blue-400"}`}
             >
               {link.title}
               <link.icon />

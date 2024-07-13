@@ -5,7 +5,6 @@ const page = () => {
   return (
     <div>
       <Header />
-
       <main className="container mx-auto my-10 px-6">
         <section id="home" className="text-center">
           <div
@@ -18,7 +17,7 @@ const page = () => {
               effortlessly.
             </p>
             <a
-              href="/signup"
+              href="#signup"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full mx-auto my-auto"
             >
               Get Started Now
