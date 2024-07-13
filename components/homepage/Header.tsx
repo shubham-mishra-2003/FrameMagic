@@ -1,10 +1,18 @@
+"use client";
+
 import React from "react";
+import Logo from "../Logo";
+import ModeSwitch from "../ModeSwitch";
+import { useTheme } from "next-themes";
 
 const Header = () => {
+
+  const { resolvedTheme } = useTheme();
+
   return (
     <div>
       <header
-        className="text-white"
+        className={`${resolvedTheme == "dark" ? 'text-white' : 'text-black'}`}
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8))",
@@ -12,8 +20,8 @@ const Header = () => {
           backgroundPosition: "center"
         }}
       >
-        <div className="container mx-auto flex justify-between items-center p-6">
-          <div className="text-2xl font-bold">Image Wizard</div>
+        <div className="container mx-auto flex justify-between items-center p-3">
+          <Logo />
           <nav className="space-x-4">
             <a href="#home" className="hover:underline">
               Home
@@ -43,6 +51,7 @@ const Header = () => {
             </a>
           </div>
         </div>
+        <ModeSwitch />
       </header>
     </div>
   );
