@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
-  title: "Imagica",
+  title: "Image Wizard",
   description: "AI tool for images",
   icons: "/logo.png"
 };
@@ -14,6 +13,6 @@ export default function HomeLayout({
 }>) {
 
   return (
-      <ThemeProvider>{children}</ThemeProvider>
+      <div>{children}</div>
   );
 }

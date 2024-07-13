@@ -1,7 +1,6 @@
 import DashboardHeader from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { auth } from "@clerk/nextjs/server";
-import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,16 +17,14 @@ export default function Dashboardlayout({
   auth().protect();
 
   return (
-    <ThemeProvider>
-      <div className="h-screen flex flex-col">
-        <DashboardHeader />
-        <div className="flex flex-1 overflow-hidden">
-          <Sidebar />
-          <div className="flex-1 overflow-auto pt-20">
-            {children}
-          </div>
+    <div className="h-screen flex flex-col">
+      <DashboardHeader />
+      <div className="flex flex-1 overflow-hidden">
+        <Sidebar />
+        <div className="flex-1 overflow-auto">
+          {children}
         </div>
       </div>
-    </ThemeProvider>
+    </div>
   );
 }

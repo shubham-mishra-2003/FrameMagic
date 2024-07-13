@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -6,7 +6,7 @@ import {
   SheetHeader,
   SheetTrigger
 } from "./ui/sheet";
-import navLinks from "@/constants";
+import {SideBar} from "@/constants";
 import Link from "next/link";
 import { AlignCenter } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -15,8 +15,14 @@ import Logo from "./Logo";
 const MobileSidebar = () => {
   const { resolvedTheme } = useTheme();
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger className="flex md:hidden">
         <AlignCenter />
       </SheetTrigger>
@@ -31,14 +37,18 @@ const MobileSidebar = () => {
         </SheetHeader>
         <SheetDescription className="h-full overflow-y-auto">
           <ul className="gap-4 px-1 pb-2 flex flex-col h-full overflow-y-auto justify-start items-center">
-            {navLinks.map(link =>
+            {SideBar.map(link =>
               <li
                 key={link.title}
                 className="flex text-[15px] font-bold w-full justify-center items-center"
               >
                 <Link
                   href={`/${link.href}`}
-                  className="hover:bg-gray-800 bg-gray-900 w-full flex justify-between gap-2 items-center rounded-full px-6 p-4"
+                  className={`w-full flex justify-between gap-2 items-center rounded-full px-6 p-4 ${resolvedTheme ==
+                  "dark"
+                    ? "bg-gray-900"
+                    : "bg-slate-300"}`}
+                  onClick={closeSidebar}
                 >
                   {link.title}
                   <link.icon />

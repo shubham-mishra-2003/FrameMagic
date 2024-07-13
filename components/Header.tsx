@@ -28,13 +28,13 @@ const DashboardHeader = () => {
 
   return (
     <div
-      className={`flex justify-between px-6 p-2 fixed top-0 left-0 w-full items-center ${resolvedTheme ==
+      className={`flex justify-between px-6 p-2 w-full items-center ${resolvedTheme ==
       "dark"
         ? "bg-black text-white"
-        : "bg-gray-200 text-black"}`}
+        : "bg-slate-100 text-black"}`}
     >
       <Logo />
-      <div className="hidden md:flex">
+      <div className="hidden bg-black rounded-full md:flex">
         <UserButton afterSignOutUrl="/home" showName />
       </div>
       <div className="md:hidden flex justify-center items-center gap-2">

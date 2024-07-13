@@ -22,12 +22,12 @@ export default function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        baseTheme: dark
+        baseTheme: dark,
       }}
     >
       <html lang="en" suppressHydrationWarning={true}>
         <body className={inter.className}>
-          <div>{children}</div>
+          <ThemeProvider>{children}</ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

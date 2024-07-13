@@ -1,12 +1,12 @@
 import { House, ImageDown, Atom, Eraser, PaintRoller, FileX2, CreditCard, UserRound, LucideIcon } from "lucide-react";
 
-interface NavLink {
+interface SideBarLinks {
   title: string;
   href: string;
   icon: LucideIcon;
 }
 
-const navLinks: NavLink[] = [
+const SideBar: SideBarLinks[] = [
   {
     title: "Home",
     href: "/",
@@ -44,9 +44,28 @@ const navLinks: NavLink[] = [
   },
   {
     title: "Buy Credits",
-    href: "buy-credits",
+    href: "credits",
     icon: CreditCard
   }
 ];
 
-export default navLinks;
+const navLinks = [
+  {
+    title: "Home",
+    id: "home"
+  },
+  {
+    title: "Features",
+    id: "features"
+  },
+  {
+    title: "Pricing",
+    id: "pricing"
+  },
+  {
+    title: "About",
+    id: "about"
+  },
+];
+
+export { SideBar, navLinks };
