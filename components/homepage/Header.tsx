@@ -32,11 +32,11 @@ const Header = () => {
             </a>
           </nav>
           <div className="space-x-4">
-            <a href="#login" className="hover:underline">
+            <a href="/login"className="hover:underline">
               Login
             </a>
             <a
-              href="#signup"
+              href="/signup"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
               Sign Up
