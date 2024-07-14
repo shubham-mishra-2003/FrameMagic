@@ -19,42 +19,42 @@ interface SideBarLinks {
 const SideBar: SideBarLinks[] = [
   {
     title: "Home",
-    href: "",
+    href: "dashboard",
     icon: House
   },
   {
     title: "Image Restore",
-    href: "tools/add/restore",
+    href: "dashboard/tools/add/restore",
     icon: ImageDown
   },
   {
     title: "Generate Fill",
-    href: "tools/add/fill",
+    href: "dashboard/tools/add/fill",
     icon: Atom
   },
   {
     title: "Object Remove",
-    href: "tools/add/remove",
+    href: "dashboard/tools/add/remove",
     icon: Eraser
   },
   {
     title: "Object Recolor",
-    href: "tools/add/recolor",
+    href: "dashboard/tools/add/recolor",
     icon: PaintRoller
   },
   {
     title: "Background Remove",
-    href: "tools/add/removeBackground",
+    href: "dashboard/tools/add/removeBackground",
     icon: FileX2
   },
   {
     title: "Profile",
-    href: "profile",
+    href: "dashboard/profile",
     icon: UserRound
   },
   {
     title: "Buy Credits",
-    href: "credits",
+    href: "dashboard/credits",
     icon: CreditCard
   }
 ];

@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs/server";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dashboard | Image Wizard",
+  title: "Dashboard | Imagica",
   description: "AI tool for images",
   icons: "/logo.png"
 };
