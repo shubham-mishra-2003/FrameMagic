@@ -7,14 +7,14 @@ const Logo = () => {
 
   return (
     <div className="flex justify-center gap-2 items-center">
-      <div className="flex w-12 md:w-14 lg:w-16">
+      <div className="flex w-12">
         <Image src="/logo.png" height={70} width={70} alt="logo" />
       </div>
       <span className="flex flex-col justify-center items-start">
         <h1
           className={`${resolvedTheme == "dark"
             ? "to-violet-300 from-blue-500"
-            : "to-violet-600 from-blue-600"} text-lg sm:text-xl md:text-2xl lg:text-3xl bg-gradient-to-tr bg-clip-text text-transparent font-bold font-serif`}
+            : "to-violet-600 from-blue-600"} text-lg sm:text-xl md:text-2xl bg-gradient-to-tr bg-clip-text text-transparent font-bold font-serif`}
         >
           ImagicaAI
         </h1>
