@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SideBar } from "../constants/index";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
+import Logo from "./Logo";
 
 const Sidebar = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,12 +20,13 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`hidden flex-col font-bold justify-between md:flex h-full ${resolvedTheme ===
+      className={`hidden gap-2 pt-2 flex-col font-bold justify-between md:flex h-full ${resolvedTheme ===
       "dark"
         ? "bg-black"
         : "bg-slate-100"}`}
     >
-      <ul className="gap-3 p-3 flex flex-col h-full overflow-y-auto justify-start items-center">
+      <Logo />
+      <ul className="gap-[6px] p-3 flex flex-col h-full overflow-y-auto justify-start items-center">
         {SideBar.slice(0, 6).map(link => {
           const isActive = `/${link.href}` === pathname;
           return (
@@ -34,7 +36,7 @@ const Sidebar = () => {
             >
               <Link
                 href={`/${link.href}`}
-                className={`text-[13px] w-full flex justify-between gap-10 items-center rounded-full p-5 py-[15px] ${isActive
+                className={`text-[16px] w-full flex justify-between gap-7 items-center rounded-full p-5 py-[15px] ${isActive
                   ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"
                   : resolvedTheme === "dark"
                     ? "hover:bg-gray-800 bg-gray-900 text-white"
@@ -47,7 +49,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
-      <ul className="gap-3 p-3 flex flex-col justify-start items-center">
+      <ul className="gap-[6px] p-3 flex flex-col justify-start items-center">
         {SideBar.slice(6).map(link => {
           const isActive = `/${link.href}` === pathname;
           return (
@@ -57,7 +59,7 @@ const Sidebar = () => {
             >
               <Link
                 href={`/${link.href}`}
-                className={`text-[14px] w-full flex justify-between gap-10 items-center rounded-full p-5 py-[15px] ${isActive
+                className={`text-[16px] w-full flex justify-between gap-7 items-center rounded-full p-5 py-[15px] ${isActive
                   ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"
                   : resolvedTheme === "dark"
                     ? "hover:bg-gray-800 bg-gray-900 text-white"

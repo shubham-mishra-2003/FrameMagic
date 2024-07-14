@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 *::-webkit-scrollbar {
   height: 100%;
   width: 3px;

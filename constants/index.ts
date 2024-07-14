@@ -16,7 +16,7 @@ interface SideBarLinks {
   icon: LucideIcon;
 }
 
-const SideBar: SideBarLinks[] = [
+export const SideBar: SideBarLinks[] = [
   {
     title: "Home",
     href: "dashboard",
@@ -59,7 +59,7 @@ const SideBar: SideBarLinks[] = [
   }
 ];
 
-const navLinks = [
+export const navLinks = [
   {
     title: "Home",
     id: "home"
@@ -156,7 +156,7 @@ export const plans = [
   },
 ];
 
-export const transformationTypes = {
+export const toolType = {
   restore: {
     type: "restore",
     title: "Restore Image",
@@ -228,5 +228,3 @@ export const defaultValues = {
 };
 
 export const creditFee = -1;
-
-export { SideBar, navLinks };

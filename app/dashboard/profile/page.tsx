@@ -5,7 +5,7 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <div className='h-full flex justify-center items-center'>
+    <div className='flex w-full justify-center items-center'>
       <ModeSwitch />
     </div>
   );
