@@ -1,11 +1,20 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 
 const DashboardHeader = ({ title = "", subtitle = "" }) => {
 
+  const [Loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+    setLoading(false)
+  })
+
   const { resolvedTheme } = useTheme();
+
+  if(Loading) return <HeadLoader />
 
   return (
     <div className="flex w-full left-0 p-5 justify-between items-center">
@@ -30,3 +39,12 @@ const DashboardHeader = ({ title = "", subtitle = "" }) => {
 };
 
 export default DashboardHeader;
+
+const HeadLoader = () => {
+  return (
+    <div className="pt-20 pb-3 md:pt-0 gap-3 flex flex-col">
+      <div className="bg-slate-200 animate-pulse rounded-full h-14 w-60"></div>
+      <div className="bg-slate-200 animate-pulse rounded-full h-14 w-96"></div>
+    </div>
+  )
+}

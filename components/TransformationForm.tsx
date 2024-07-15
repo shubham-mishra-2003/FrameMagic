@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useTransition } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,7 +15,6 @@ import {
   SelectTrigger,
   SelectValue
 } from "./ui/select";
-import { useState } from "react";
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
@@ -36,6 +35,13 @@ const TransformationForm = ({
   creditBalance,
   config = null
 }: TransformationFormProps) => {
+
+  const [Loading, setLoading] = useState(true)
+
+  useEffect(()=>{
+    setLoading(false)
+  }, [])
+
   const toolsType = toolType[type];
 
   const [image, setImage] = useState(data);
@@ -83,11 +89,9 @@ const TransformationForm = ({
       height: imageSize.height,
     }))
 
-
     setNewTransformation(toolType.config);
 
     return onChangeField(value);
-
   };
 
   const onInputChangeHandler = (
@@ -125,6 +129,8 @@ const TransformationForm = ({
 
 
   const { resolvedTheme } = useTheme();
+
+  if(Loading) return <PageLoading />
 
   return (
     <Form {...form}>
@@ -220,7 +226,7 @@ const TransformationForm = ({
           <Button
             disabled={isTransforming || newTransformation === null}
             onClick={onTranformHandler}
-            className="bg-gradient-to-tr to-blue-600 from-violet-600 text-white p-7 font-bold text-lg rounded-full hover:to-violet-800 hover:from-blue-800 delay-75"
+            className="bg-gradient-to-tr to-blue-600 from-violet-600 text-white p-7 font-bold text-lg rounded-full hover:to-violet-700 hover:from-blue-700 delay-75"
             type="submit"
           >
             {isTransforming ? 'Transforming...' : 'Apply'}
@@ -239,3 +245,15 @@ const TransformationForm = ({
 };
 
 export default TransformationForm;
+
+const PageLoading = () => {
+  return(
+    <div className="flex flex-col h-full w-full bg-black gap-4">
+      <div className="h-16 bg-slate-200 w-full animate-pulse rounded-full"></div>
+      <div className="h-16 bg-slate-200 w-full animate-pulse rounded-full"></div>
+      <div className="h-16 bg-slate-200 w-full animate-pulse rounded-full"></div>
+      <div className="h-16 bg-slate-200 w-full animate-pulse rounded-full"></div>
+      <div className="h-16 bg-slate-200 w-full animate-pulse rounded-full"></div>
+    </div>
+  )
+}

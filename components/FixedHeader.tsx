@@ -17,11 +17,7 @@ const FixedHeader = () => {
 
   if (isLoading)
     return (
-      <div className="fixed px-10 flex justify-between items-center w-full h-20 top-0 left-0 bg-black">
-        <div className="flex gap-3">
-          <div className="bg-slate-300 animate-pulse rounded-xl h-12 w-10" />
-          <div className="bg-slate-300 animate-pulse rounded-xl h-12 w-24" />
-        </div>
+      <div className="px-10 flex justify-end items-center w-full h-20 top-0 left-0 bg-black">
         <div className="bg-slate-300 animate-pulse rounded-xl h-12 md:w-32  w-10" />
       </div>
     );
