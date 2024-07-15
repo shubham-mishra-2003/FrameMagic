@@ -92,9 +92,7 @@ export default Sidebar;
 
 const SidebarLoader = () => {
   return (
-    <div className="bg-black items-center p-3 gap-3 md:flex hidden flex-col h-full w-72">
-      <div className="bg-slate-200 animate-pulse w-full h-12 rounded-full" />
-      <div className="bg-slate-200 animate-pulse w-full h-12 rounded-full" />
+    <div className="bg-black items-center p-3 pt-20 gap-3 md:flex hidden flex-col h-full w-72">
       <div className="bg-slate-200 animate-pulse w-full h-12 rounded-full" />
       <div className="bg-slate-200 animate-pulse w-full h-12 rounded-full" />
       <div className="bg-slate-200 animate-pulse w-full h-12 rounded-full" />

@@ -17,14 +17,18 @@ const FixedHeader = () => {
 
   if (isLoading)
     return (
-      <div className="px-10 flex justify-end items-center w-full h-20 top-0 left-0 bg-black">
+      <div className="fixed px-10 flex justify-between items-center w-full h-20 top-0 left-0 bg-black">
+        <div className="flex gap-3">
+          <div className="bg-slate-300 animate-pulse rounded-xl h-12 w-10" />
+          <div className="bg-slate-300 animate-pulse rounded-xl h-12 w-24" />
+        </div>
         <div className="bg-slate-300 animate-pulse rounded-xl h-12 md:w-32  w-10" />
       </div>
     );
 
   return (
     <div
-      className={`p-4 md:p-6 md:static fixed left-0 top-0 w-full flex justify-between items-center ${resolvedTheme ==
+      className={`p-4 md:static fixed left-0 top-0 w-full flex justify-between items-center ${resolvedTheme ==
       "dark"
         ? "bg-black"
         : "bg-slate-100"}`}

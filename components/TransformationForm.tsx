@@ -18,6 +18,7 @@ import {
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
+import MediaUploader from "./MediaUploader";
 
 export const formSchema = z.object({
   title: z.string(),
@@ -89,7 +90,7 @@ const TransformationForm = ({
       height: imageSize.height,
     }))
 
-    setNewTransformation(toolType.config);
+    setNewTransformation(toolsType.config);
 
     return onChangeField(value);
   };
@@ -222,6 +223,13 @@ const TransformationForm = ({
                   />}
               />}
           </div>}
+
+        <div className="">
+          <CustomField control={form.control} name="publicId" className="flex size-full flex-col" render={({field}) => (
+            <MediaUploader onValueChange = {field.onChange} setImage = {setImage} publicId={field.value} image = {image} type = {type} />
+          )} />
+        </div>
+        
         <div className="flex flex-col gap-4 p-3 md:px-10">
           <Button
             disabled={isTransforming || newTransformation === null}

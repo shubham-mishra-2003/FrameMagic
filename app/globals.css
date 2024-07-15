@@ -12,7 +12,7 @@
 
 *::-webkit-scrollbar {
   height: 100%;
-  width: 3px;
+  width: 5px;
 }
 *::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -41,6 +41,6 @@
 .cl-internal-d3snkr,
 .cl-userButtonPopoverFooter,
 .cl-internal-uyu30o,
-.cl-internal-b3fm6y {
+.cl-internal-b3fm6y{
   display: none;
 }
