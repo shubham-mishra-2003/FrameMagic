@@ -1,65 +1,47 @@
-import {
-  House,
-  ImageDown,
-  Atom,
-  Eraser,
-  PaintRoller,
-  FileX2,
-  CreditCard,
-  UserRound,
-  LucideIcon
-} from "lucide-react";
-
-interface SideBarLinks {
-  title: string;
-  href: string;
-  icon: LucideIcon;
-}
-
-export const SideBar: SideBarLinks[] = [
+const SideBar = [
   {
     title: "Home",
     href: "dashboard",
-    icon: House
+    icon: "/assets/house.png"
   },
   {
     title: "Image Restore",
     href: "dashboard/tools/add/restore",
-    icon: ImageDown
+    icon: "/assets/image-down.png"
   },
   {
     title: "Generate Fill",
     href: "dashboard/tools/add/fill",
-    icon: Atom
+    icon: "/assets/atom.png"
   },
   {
     title: "Object Remove",
     href: "dashboard/tools/add/remove",
-    icon: Eraser
+    icon: "/assets/eraser.png"
   },
   {
     title: "Object Recolor",
     href: "dashboard/tools/add/recolor",
-    icon: PaintRoller
+    icon: "/assets/paint-roller.png"
   },
   {
     title: "Background Remove",
     href: "dashboard/tools/add/removeBackground",
-    icon: FileX2
+    icon: "/assets/file-x-2.png"
   },
   {
     title: "Profile",
     href: "dashboard/profile",
-    icon: UserRound
+    icon: "/assets/user-round.png"
   },
   {
     title: "Buy Credits",
     href: "dashboard/credits",
-    icon: CreditCard
+    icon: "/assets/credit-card.png"
   }
 ];
 
-export const navLinks = [
+const navLinks = [
   {
     title: "Home",
     id: "home"
@@ -86,23 +68,11 @@ export const plans = [
     price: 0,
     credits: 20,
     inclusions: [
-      {
-        label: "20 Free Credits",
-        isIncluded: true,
-      },
-      {
-        label: "Basic Access to Services",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Customer Support",
-        isIncluded: false,
-      },
-      {
-        label: "Priority Updates",
-        isIncluded: false,
-      },
-    ],
+      { label: "20 Free Credits", isIncluded: true },
+      { label: "Basic Access to Services", isIncluded: true },
+      { label: "Priority Customer Support", isIncluded: false },
+      { label: "Priority Updates", isIncluded: false }
+    ]
   },
   {
     _id: 2,
@@ -111,23 +81,11 @@ export const plans = [
     price: 40,
     credits: 120,
     inclusions: [
-      {
-        label: "120 Credits",
-        isIncluded: true,
-      },
-      {
-        label: "Full Access to Services",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Customer Support",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Updates",
-        isIncluded: false,
-      },
-    ],
+      { label: "120 Credits", isIncluded: true },
+      { label: "Full Access to Services", isIncluded: true },
+      { label: "Priority Customer Support", isIncluded: true },
+      { label: "Priority Updates", isIncluded: false }
+    ]
   },
   {
     _id: 3,
@@ -136,24 +94,12 @@ export const plans = [
     price: 199,
     credits: 2000,
     inclusions: [
-      {
-        label: "2000 Credits",
-        isIncluded: true,
-      },
-      {
-        label: "Full Access to Services",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Customer Support",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Updates",
-        isIncluded: true,
-      },
-    ],
-  },
+      { label: "2000 Credits", isIncluded: true },
+      { label: "Full Access to Services", isIncluded: true },
+      { label: "Priority Customer Support", isIncluded: true },
+      { label: "Priority Updates", isIncluded: true }
+    ]
+  }
 ];
 
 export const toolType = {
@@ -162,40 +108,36 @@ export const toolType = {
     title: "Restore Image",
     subTitle: "Refine images by removing noise and imperfections",
     config: { restore: true },
-    icon: "image.svg",
+    icon: "image.svg"
   },
   removeBackground: {
     type: "removeBackground",
     title: "Background Remove",
     subTitle: "Removes the background of the image using AI",
     config: { removeBackground: true },
-    icon: "camera.svg",
+    icon: "camera.svg"
   },
   fill: {
     type: "fill",
     title: "Generative Fill",
     subTitle: "Enhance an image's dimensions using AI outpainting",
     config: { fillBackground: true },
-    icon: "stars.svg",
+    icon: "stars.svg"
   },
   remove: {
     type: "remove",
     title: "Object Remove",
     subTitle: "Identify and eliminate objects from images",
-    config: {
-      remove: { prompt: "", removeShadow: true, multiple: true },
-    },
-    icon: "scan.svg",
+    config: { remove: { prompt: "", removeShadow: true, multiple: true } },
+    icon: "scan.svg"
   },
   recolor: {
     type: "recolor",
     title: "Object Recolor",
     subTitle: "Identify and recolor objects from the image",
-    config: {
-      recolor: { prompt: "", to: "", multiple: true },
-    },
-    icon: "filter.svg",
-  },
+    config: { recolor: { prompt: "", to: "", multiple: true } },
+    icon: "filter.svg"
+  }
 };
 
 export const aspectRatioOptions = {
@@ -203,20 +145,20 @@ export const aspectRatioOptions = {
     aspectRatio: "1:1",
     label: "Square (1:1)",
     width: 1000,
-    height: 1000,
+    height: 1000
   },
   "3:4": {
     aspectRatio: "3:4",
     label: "Standard Portrait (3:4)",
     width: 1000,
-    height: 1334,
+    height: 1334
   },
   "9:16": {
     aspectRatio: "9:16",
     label: "Phone Portrait (9:16)",
     width: 1000,
-    height: 1778,
-  },
+    height: 1778
+  }
 };
 
 export const defaultValues = {
@@ -224,7 +166,9 @@ export const defaultValues = {
   aspectRatio: "",
   color: "",
   prompt: "",
-  publicId: "",
+  publicId: ""
 };
 
 export const creditFee = -1;
+
+export { SideBar, navLinks };

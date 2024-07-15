@@ -6,8 +6,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  user-select: none;
-  font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* user-select: none; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -38,8 +38,8 @@
 }
 
 .cl-internal-11ttlho,
-.cl-internal-180wb59,
-.cl-internal-180wb59,
-.cl-internal-lqfubk {
+.cl-internal-d3snkr,
+.cl-userButtonPopoverFooter,
+.cl-internal-uyu30o{
   display: none;
 }

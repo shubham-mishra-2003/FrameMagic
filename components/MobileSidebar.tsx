@@ -11,6 +11,7 @@ import Link from "next/link";
 import { AlignCenter } from "lucide-react";
 import { useTheme } from "next-themes";
 import Logo from "./Logo";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const MobileSidebar = () => {
@@ -57,7 +58,13 @@ const MobileSidebar = () => {
                     onClick={closeSidebar}
                   >
                     {link.title}
-                    <link.icon />
+                    <Image
+                      src={link.icon}
+                      height={20}
+                      className={`${resolvedTheme == "dark" ? "invert" : ""}`}
+                      width={20}
+                      alt="sidebar icon"
+                    />
                   </Link>
                 </li>
               );
@@ -81,7 +88,13 @@ const MobileSidebar = () => {
                     onClick={closeSidebar}
                   >
                     {link.title}
-                    <link.icon />
+                    <Image
+                      src={link.icon}
+                      height={20}
+                      className={`${resolvedTheme == "dark" ? "invert" : ""}`}
+                      width={20}
+                      alt="sidebar icon"
+                    />
                   </Link>
                 </li>
               );

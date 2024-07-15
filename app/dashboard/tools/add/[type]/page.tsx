@@ -1,42 +1,18 @@
-"use client";
-
 import DashboardHeader from "@/components/Header";
-import React, { useEffect, useState } from "react";
 import { toolType } from "@/constants/index";
 import TransformationForm from "@/components/TransformationForm";
-import { useAuth } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
 import { getUserById } from "@/lib/actions/user.actions";
+import { auth } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
 
-const AddTransformation = ({ params: { type } }: SearchParamProps) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState(null);
-  const { userId } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!userId) {
-        router.push('/login');
-        return;
-      }
-
-      const fetchedUser = await getUserById(userId);
-      setUser(fetchedUser);
-      setIsLoading(false);
-    };
-
-    fetchData();
-  }, [userId, router]);
-
-  if (isLoading)
-    return (
-      <div className="h-full w-full flex items-center justify-center">
-        <div className="h-20 w-20 rounded-full animate-spin border-2 border-black bg-transparent" />
-      </div>
-    );
-
+const AddTransformation = async ({ params: { type } }: SearchParamProps) => {
+  const { userId } = auth();
+  
   const tool = toolType[type];
+
+  if (!userId) redirect('/login');
+
+  const user = await getUserById(userId);
 
   return (
     <div>

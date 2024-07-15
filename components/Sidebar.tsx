@@ -6,7 +6,7 @@ import { SideBar } from "../constants/index";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
-
+import Image from "next/image";
 const Sidebar = () => {
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
@@ -43,7 +43,13 @@ const Sidebar = () => {
                     : "bg-slate-200 text-black hover:bg-slate-300"}`}
               >
                 {link.title}
-                <link.icon height={20} />
+                <Image
+                  src={link.icon}
+                  height={20}
+                  className={`${resolvedTheme == "dark" ? "invert" : ""}`}
+                  width={20}
+                  alt="sidebar icon"
+                />
               </Link>
             </li>
           );
@@ -66,7 +72,13 @@ const Sidebar = () => {
                     : "bg-slate-200 text-black hover:bg-slate-300"}`}
               >
                 {link.title}
-                <link.icon height={20} />
+                <Image
+                  src={link.icon}
+                  height={20}
+                  className={`${resolvedTheme == "dark" ? "invert" : ""}`}
+                  width={20}
+                  alt="sidebar icon"
+                />
               </Link>
             </li>
           );

@@ -37,7 +37,7 @@ const FixedHeader = () => {
         <Logo />
       </div>
       <div className="flex justify-center md:justify-end items-center md:w-full gap-3">
-        <div className="bg-black items-end hidden md:block p-0 rounded-full">
+        <div className="bg-slate-100 p-1 items-end hidden md:block p-0 rounded-full">
           <UserButton showName />
         </div>
         <div className="flex justify-center items-center md:hidden">
