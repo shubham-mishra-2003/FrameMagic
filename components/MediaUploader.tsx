@@ -69,7 +69,7 @@ const MediaUploader = ({
           <h3 className={`font-extrabold text-3xl ${resolvedTheme == "dark" ? 'text-blue-500' : 'text-blue-600'}`}>Original</h3>
           {publicId ? (
             <div className="cursor-pointer overflow-hidden rounded-xl">
-              <CldImage width={getImageSize(type, image, "widht")} />
+              <CldImage width={getImageSize(type, image, "width")} height={getImageSize(type, image, "height")} src={publicId} alt="Image" sizes={"(max-width: 767px) 100vw, 50vw"} />
             </div>
           ): (
             <div className={`flex h-72 max-w-96 justify-center items-center cursor-pointer flex-col gap-5 rounded-xl border-2 border-dashed shadow-inner ${resolvedTheme == "dark" ? 'bg-gray-800 shadow-slate-900' : 'bg-slate-100 shadow-slate-600'}`} onClick={()=>{open()}}>
