@@ -34,7 +34,7 @@ export const CustomField = ({
       render={({ field }) =>
         <FormItem className={className}>
           {formLabel &&
-            <FormLabel>
+            <FormLabel className="md:text-lg text-[15px]">
               {formLabel}
             </FormLabel>}
           <FormControl>

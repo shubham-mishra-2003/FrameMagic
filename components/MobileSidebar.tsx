@@ -61,7 +61,7 @@ const MobileSidebar = () => {
                     <Image
                       src={link.icon}
                       height={20}
-                      className={`${resolvedTheme == "dark" ? "invert" : ""}`}
+                      className={`${isActive ? 'invert' : resolvedTheme == "dark" ? "invert" : ''}`}
                       width={20}
                       alt="sidebar icon"
                     />
@@ -91,7 +91,7 @@ const MobileSidebar = () => {
                     <Image
                       src={link.icon}
                       height={20}
-                      className={`${resolvedTheme == "dark" ? "invert" : ""}`}
+                      className={`${isActive ? 'invert' : resolvedTheme == "dark" ? "invert" : ''}`}
                       width={20}
                       alt="sidebar icon"
                     />

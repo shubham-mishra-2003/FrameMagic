@@ -37,11 +37,11 @@ const FixedHeader = () => {
         <Logo />
       </div>
       <div className="flex justify-center md:justify-end items-center md:w-full gap-3">
-        <div className="bg-slate-100 p-1 items-end hidden md:block p-0 rounded-full">
-          <UserButton showName />
+        <div className="bg-slate-100 p-1 items-end hidden md:block rounded-full">
+          <UserButton showName afterSignOutUrl="/"/>
         </div>
         <div className="flex justify-center items-center md:hidden">
-          <UserButton />
+          <UserButton afterSignOutUrl="/"/>
         </div>
         <MobileSidebar />
       </div>

@@ -15,7 +15,7 @@ const AddTransformation = async ({ params: { type } }: SearchParamProps) => {
   const user = await getUserById(userId);
 
   return (
-    <div>
+    <div className="flex flex-col w-full">
       <DashboardHeader title={tool.title} subtitle={tool.subTitle} />
       <TransformationForm
         action="Add"

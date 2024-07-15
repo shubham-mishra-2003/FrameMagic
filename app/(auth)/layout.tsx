@@ -14,7 +14,7 @@ export default function LoginLayout({
     <div
       className={`${resolvedTheme == "dark"
         ? "bg-black"
-        : "bg-slate-200"} flex justify-center items-center h-screen`}
+        : "bg-slate-200"} flex justify-center items-center min-h-screen py-4`}
     >
       {children}
     </div>
