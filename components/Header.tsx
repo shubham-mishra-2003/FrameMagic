@@ -40,7 +40,7 @@ export default DashboardHeader;
 
 const HeadLoader = () => {
   return (
-    <div className="pt-20 pb-3 bg-black gap-3 flex flex-col">
+    <div className="pt-5 md:pt-20 pb-3 bg-black gap-3 flex flex-col">
       <div className="bg-slate-200 animate-pulse rounded-full h-14 w-60" />
       <div className="bg-slate-200 animate-pulse rounded-full h-14 w-96" />
     </div>

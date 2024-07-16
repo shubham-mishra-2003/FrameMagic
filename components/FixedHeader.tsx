@@ -28,7 +28,7 @@ const FixedHeader = () => {
 
   return (
     <div
-      className={`p-4 md:static fixed left-0 top-0 w-full flex justify-between items-center ${resolvedTheme ==
+      className={`p-4 md:static fixed left-0 top-0 w-full flex justify-between items-center z-10 ${resolvedTheme ==
       "dark"
         ? "bg-black"
         : "bg-slate-100"}`}
