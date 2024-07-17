@@ -31,7 +31,7 @@ const MobileSidebar = () => {
         <AlignCenter />
       </SheetTrigger>
       <SheetContent
-        className={`flex p-0 max-w-96 flex-col ${resolvedTheme == "dark"
+        className={`flex p-0 max-w-72 flex-col ${resolvedTheme == "dark"
           ? "bg-black"
           : "bg-slate-100"}`}
       >

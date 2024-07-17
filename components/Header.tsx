@@ -20,7 +20,7 @@ const DashboardHeader = ({ title = "", subtitle = "" }) => {
         <h1
           className={`${resolvedTheme == "dark"
             ? "text-gray-50"
-            : "text-gray-900"} font-bold text-2xl sm:text-3xl md:text-4xl font-serif`}
+            : "text-gray-900"} font-extrabold text-2xl sm:text-3xl md:text-4xl font-serif`}
         >
           {title}
         </h1>

@@ -62,7 +62,7 @@ const ModeSwitch = () => {
                   key={mode.value}
                   value={mode.value}
                   onSelect={() => handleThemeChange(mode.value)}
-                  className={`${resolvedTheme === 'dark' ? 'hover:bg-slate-800' : 'hover:bg-gray-300'} font-semibold cursor-pointer`}
+                  className={`${resolvedTheme === 'dark' ? 'hover:bg-slate-800 hover:shadow-slate-900' : 'hover:bg-gray-300 hover:shadow-slate-400'} hover:shadow-inner rounded-md font-semibold cursor-pointer`}
                 >
                   <Check
                     className={`mr-2 h-4 w-4 ${theme === mode.value ? 'opacity-100' : 'opacity-0'}`}

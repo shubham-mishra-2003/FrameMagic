@@ -33,11 +33,6 @@ const SideBar = [
     title: "Profile",
     href: "dashboard/profile",
     icon: "/assets/user-round.png"
-  },
-  {
-    title: "Buy Credits",
-    href: "dashboard/credits",
-    icon: "/assets/credit-card.png"
   }
 ];
 
