@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { Button } from "./ui/button";
@@ -6,24 +5,11 @@ import { useRouter } from "next/navigation";
 
 const ProfileCard = () => {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(false);
-  });
-
   const { resolvedTheme } = useTheme();
 
-  if (loading)
-    return (
-      <div className="size-full bg-black justify-center flex gap-20 px-10 items-center">
-        <div className="bg-slate-200 animate-pulse h-52 w-full rounded-md" />
-        <div className="bg-slate-200 animate-pulse h-52 w-full rounded-md" />
-      </div>
-    );
 
   return (
-    <div className="flex justify-center md:gap-20 sm:gap-16 gap-8 md:flex-row flex-col p-10 items-center">
+    <div className="flex justify-center md:gap-20 sm:gap-16 gap-8 md:flex-row flex-col py-10 items-center">
       <div
         className={`${resolvedTheme == "dark"
           ? "bg-slate-800 shadow-black shadow-xl"
@@ -61,6 +47,7 @@ const ProfileCard = () => {
               alt="credit card"
               height={20}
               width={20}
+              className={resolvedTheme == "dark" ? "invert" : ""}
             />
             Buy Credits
           </Button>

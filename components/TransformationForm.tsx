@@ -339,7 +339,7 @@ export default TransformationForm;
 
 const PageLoading = () => {
   return(
-    <div className="flex flex-col h-full w-full bg-black gap-4">
+    <div className="flex p-3 flex-col h-full w-full bg-black gap-4">
       <div className="h-16 bg-slate-200 w-full animate-pulse rounded-full"></div>
       <div className="h-16 bg-slate-200 w-full animate-pulse rounded-full"></div>
       <div className="h-16 bg-slate-200 w-full animate-pulse rounded-full"></div>

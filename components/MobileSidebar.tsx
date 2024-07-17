@@ -27,11 +27,11 @@ const MobileSidebar = () => {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger className="flex md:hidden">
+      <SheetTrigger className="flex lg:hidden px-4">
         <AlignCenter />
       </SheetTrigger>
       <SheetContent
-        className={`flex p-0 max-w-72 flex-col ${resolvedTheme == "dark"
+        className={`flex p-0 w-[270px] flex-col ${resolvedTheme == "dark"
           ? "bg-black"
           : "bg-slate-100"}`}
       >
@@ -39,29 +39,31 @@ const MobileSidebar = () => {
           <Logo />
           <div className="bg-gray-500 w-full flex h-[1px] rounded-lg" />
         </SheetHeader>
-        <SheetDescription className="h-full flex flex-col overflow-y-auto">
-          <ul className="gap-4 px-1 pb-2 flex flex-col h-full overflow-y-auto justify-start items-center">
+        <SheetDescription className="h-full font-bold flex flex-col overflow-y-auto">
+          <ul className="gap-[6px] p-3 flex flex-col h-full overflow-y-auto justify-start items-center">
             {SideBar.slice(0, 6).map(link => {
               const isActive = `/${link.href}` === pathname;
               return (
                 <li
                   key={link.title}
-                  className="flex text-[15px] font-bold w-full justify-center items-center"
+                  className="flex w-full justify-center items-center"
                 >
                   <Link
-                    href={`/${link.href}`}
-                    className={`w-full flex justify-between gap-2 items-center rounded-full px-6 p-4 ${isActive
-                      ? "bg-gradient-to-tr to-blue-600 text-white from-violet-600"
-                      : resolvedTheme === "dark"
-                        ? "hover:bg-gray-800 bg-gray-900 text-white"
-                        : "bg-slate-200 text-black hover:bg-slate-300"}`}
                     onClick={closeSidebar}
+                    href={`/${link.href}`}
+                    className={`text-[16px] shadow-inner w-full flex justify-between gap-7 items-center rounded-full p-5 py-[15px] ${isActive
+                      ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"
+                      : resolvedTheme === "dark"
+                        ? "hover:bg-gray-800 hover:shadow-slate-900 bg-gray-900 text-white"
+                        : "bg-slate-200 hover:shadow-slate-400 text-black hover:bg-slate-300"}`}
                   >
                     {link.title}
                     <Image
                       src={link.icon}
                       height={20}
-                      className={`${isActive ? 'invert' : resolvedTheme == "dark" ? "invert" : ''}`}
+                      className={`${isActive
+                        ? "invert"
+                        : resolvedTheme == "dark" ? "invert" : ""}`}
                       width={20}
                       alt="sidebar icon"
                     />
@@ -70,28 +72,30 @@ const MobileSidebar = () => {
               );
             })}
           </ul>
-          <ul className="gap-2 px-1 py-2 flex flex-col">
+          <ul className="gap-[6px] px-3 p-2 pb-3 flex flex-col justify-start items-center">
             {SideBar.slice(6).map(link => {
               const isActive = `/${link.href}` === pathname;
               return (
                 <li
                   key={link.title}
-                  className="flex text-[15px] font-bold w-full justify-center items-center"
+                  className="flex w-full justify-center items-center"
                 >
                   <Link
-                    href={`/${link.href}`}
-                    className={`w-full flex justify-between gap-2 items-center rounded-full px-6 p-4 ${isActive
-                      ? "bg-gradient-to-tr to-blue-600 text-white from-violet-600"
-                      : resolvedTheme === "dark"
-                        ? "hover:bg-gray-800 bg-gray-900 text-white"
-                        : "bg-slate-200 text-black hover:bg-slate-300"}`}
                     onClick={closeSidebar}
+                    href={`/${link.href}`}
+                    className={`text-[16px] shadow-inner w-full flex justify-between gap-7 items-center rounded-full p-5 py-[15px] ${isActive
+                      ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"
+                      : resolvedTheme === "dark"
+                        ? "hover:bg-gray-800 hover:shadow-slate-900 bg-gray-900 text-white"
+                        : "bg-slate-200 hover:shadow-slate-400 text-black hover:bg-slate-300"}`}
                   >
                     {link.title}
                     <Image
                       src={link.icon}
                       height={20}
-                      className={`${isActive ? 'invert' : resolvedTheme == "dark" ? "invert" : ''}`}
+                      className={`${isActive
+                        ? "invert"
+                        : resolvedTheme == "dark" ? "invert" : ""}`}
                       width={20}
                       alt="sidebar icon"
                     />

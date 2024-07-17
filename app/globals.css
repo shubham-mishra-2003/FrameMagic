@@ -41,6 +41,48 @@
 .cl-internal-d3snkr,
 .cl-userButtonPopoverFooter,
 .cl-internal-uyu30o,
-.cl-internal-b3fm6y{
+.cl-internal-b3fm6y {
   display: none;
+}
+
+/* Loader */
+.loader {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader_cube {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.loader_cube--glowing {
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.loader_cube--color {
+  z-index: 1;
+  filter: blur(2px);
+  background: linear-gradient(135deg, #1afbf0, #da00ff);
+  animation: spin 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
