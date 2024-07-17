@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { SideBar } from "../constants/index";
+import { SideBar } from "../../constants/index";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import Image from "next/image";

@@ -1,6 +1,6 @@
 import FixedHeader from "@/components/FixedHeader";
-import MediumDeviceSidebar from "@/components/MediumDeviceSidebar";
-import Sidebar from "@/components/Sidebar";
+import MediumDeviceSidebar from "@/components/sidebars/MediumDeviceSidebar";
+import Sidebar from "@/components/sidebars/Sidebar";
 import { auth } from "@clerk/nextjs/server";
 import type { Metadata } from "next";
 

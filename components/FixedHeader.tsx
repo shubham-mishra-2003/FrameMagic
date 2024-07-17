@@ -4,7 +4,7 @@ import { UserButton } from "@clerk/nextjs";
 import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { useTheme } from "next-themes";
-import MobileSidebar from "./MobileSidebar";
+import MobileSidebar from "./sidebars/MobileSidebar";
 
 const FixedHeader = () => {
   const [isLoading, setIsLoading] = useState(true);

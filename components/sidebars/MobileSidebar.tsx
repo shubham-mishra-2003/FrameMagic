@@ -5,12 +5,12 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTrigger
-} from "./ui/sheet";
+} from "../ui/sheet";
 import { SideBar } from "@/constants";
 import Link from "next/link";
 import { AlignCenter } from "lucide-react";
 import { useTheme } from "next-themes";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
