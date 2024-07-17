@@ -1,68 +1,73 @@
 import { auth } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-
-import Header from "@/components/Header";
+import { Separator } from "@/components/ui/separator";
 import TransformedImage from "@/components/TransformedImage";
 import { Button } from "@/components/ui/button";
 import { getImage } from "@/lib/actions/image.actions";
 import { getImageSize } from "@/lib/utils";
-import { useTheme } from "next-themes";
 // import { DeleteConfirmation } from "@/components/shared/DeleteConfirmation";
 
 const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
   const { userId } = auth();
-
   const image = await getImage(id);
 
-  const { resolvedTheme } = useTheme();
-
   return (
-    <div className="flex flex-col">
-      <Header title={image.title} />
-      <div className="flex md:px-8 sm:px-7 px-5 flex-wrap gap-4">
-        <div className="font-medium text-sm md:p-16-medium flex gap-2">
-          <p className={`${resolvedTheme == "dark" ? 'text-slate-300' : 'text-slate-800'}`}>Transformation:</p>
-          <p className=" capitalize text-purple-400">{image.transformationType}</p>
+    <div className="flex flex-col gap-8 md:p-8 sm:p-7 p-5">
+      <div className="flex flex-col gap-3">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif">
+          {image.title}
+        </h1>
+        <div className="flex items-center flex-wrap gap-3">
+          <div className="font-bold text-sm md:p-16-medium flex gap-2">
+            <p className="md:text-xl sm:text-lg text-sm">Transformation :</p>
+            <p className="md:text-xl sm:text-lg text-sm capitalize text-blue-500">
+              {image.transformationType}
+            </p>
+          </div>
+
+          {image.prompt &&
+            <div className="flex justify-center gap-3 items-center">
+              <p className="text-slate-500 hidden sm:block">&#x25CF;</p>
+              <div className="font-bold text-sm md:p-16-medium flex gap-2">
+                <p className="md:text-xl sm:text-lg text-sm">Prompt :</p>
+                <p className="md:text-xl sm:text-lg text-sm capitalize text-blue-500">
+                  {image.prompt}
+                </p>
+              </div>
+            </div>}
+
+          {image.color &&
+            <div className="flex justify-center gap-3 items-center">
+              <p className="text-slate-500 hidden sm:block">&#x25CF;</p>
+              <div className="font-bold text-sm md:p-16-medium flex gap-2">
+                <p className="md:text-xl sm:text-lg text-sm">Color :</p>
+                <p className="md:text-xl sm:text-lg text-sm capitalize text-blue-500">
+                  {image.color}
+                </p>
+              </div>
+            </div>}
+
+          {image.aspectRatio &&
+            <div className="flex justify-center gap-3 items-center">
+              <p className="text-slate-500 hidden sm:block">&#x25CF;</p>
+              <div className="font-bold text-sm md:p-16-medium flex gap-2">
+                <p className="md:text-xl sm:text-lg text-sm">Aspect Ratio :</p>
+                <p className="md:text-xl sm:text-lg text-sm capitalize text-blue-500">
+                  {image.aspectRatio}
+                </p>
+              </div>
+            </div>}
         </div>
-
-        {image.prompt && (
-          <>
-            <p className="hidden text-slate-400 md:block">&#x25CF;</p>
-            <div className="font-medium text-sm md:text-lg flex gap-2 ">
-              <p className="text-slate-600">Prompt:</p>
-              <p className=" capitalize text-purple-400">{image.prompt}</p>
-            </div>
-          </>
-        )}
-
-        {image.color && (
-          <>
-            <p className="hidden text-dark-400/50 md:block">&#x25CF;</p>
-            <div className="font-medium text-sm md:text-lg flex gap-2">
-              <p className="text-slate-600">Color:</p>
-              <p className=" capitalize text-purple-400">{image.color}</p>
-            </div>
-          </>
-        )}
-
-        {image.aspectRatio && (
-          <>
-            <p className="hidden text-slate-400 md:block">&#x25CF;</p>
-            <div className="text-sm font-medium mdtext-lg flex gap-2">
-              <p className="text-slate-600">Aspect Ratio:</p>
-              <p className=" capitalize text-purple-400">{image.aspectRatio}</p>
-            </div>
-          </>
-        )}
       </div>
 
-      <section className="mt-10 border-t border-slate-400">
-        <div className="grid h-fit min-h-[200px] grid-cols-1 gap-5 py-8 md:grid-cols-2">
-          {/* MEDIA UPLOADER */}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-bold text-lg text-slate-600">Original</h3>
+      <Separator className="bg-slate-500" />
 
+      <div>
+        <div className="grid h-fit min-h-[200px] grid-cols-1 gap-5 md:grid-cols-2">
+          {/* MEDIA UPLOADER */}
+          <div className="flex flex-col gap-6">
+            <h3 className="font-extrabold text-3xl text-blue-500">Original</h3>
             <Image
               width={getImageSize(image.transformationType, image, "width")}
               height={getImageSize(image.transformationType, image, "height")}
@@ -82,18 +87,19 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
           />
         </div>
 
-        {userId === image.author.clerkId && (
-          <div className="mt-4 space-y-4">
-            <Button asChild type="button" className="submit-button capitalize">
-              <Link href={`/tools/${image._id}/update`}>
-                Update Image
-              </Link>
+        {userId === image.author.clerkId &&
+          <div className="mt-6 mb-6">
+            <Button
+              asChild
+              type="button"
+              className="w-full bg-gradient-to-tr to-blue-600 from-violet-600 text-white p-7 font-bold text-lg rounded-full hover:to-violet-700 hover:from-blue-700 delay-75"
+            >
+              <Link href={`/dashboard/tools/${image._id}/update`}>Update Image</Link>
             </Button>
 
             {/* <DeleteConfirmation imageId={image._id} /> */}
-          </div>
-        )}
-      </section>
+          </div>}
+      </div>
     </div>
   );
 };

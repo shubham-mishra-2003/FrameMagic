@@ -5,7 +5,6 @@ import { Download } from "lucide-react";
 import { CldImage, getCldImageUrl } from "next-cloudinary";
 import { useTheme } from "next-themes";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
 import React from "react";
 import toast from "react-hot-toast";
 
@@ -41,7 +40,7 @@ const TransformedImage = ({
   }
 
   return (
-    <div className="flex flex-col size-full gap-4">
+    <div className="flex flex-col size-full gap-6">
       <div className="flex justify-between items-center">
         <h3
           className={`font-extrabold text-3xl ${resolvedTheme == "dark"
@@ -52,7 +51,7 @@ const TransformedImage = ({
         </h3>
 
         {hasDownload &&
-          <button className="download-btn" onClick={downloadHandler}>
+          <button title="Download image" className={`${resolvedTheme == "dark" ? 'bg-slate-700 shadow-slate-900 hover:bg-slate-800' : 'bg-slate-100 hover:bg-slate-200 shadow-slate-400'} p-2 shadow-inner rounded-full`} onClick={downloadHandler}>
             <Download
               height={24}
               width={24}
@@ -64,7 +63,7 @@ const TransformedImage = ({
       </div>
 
       {image?.publicId && transformationConfig
-        ? <div className="flex justify-center items-center size-full">
+        ? <div className="flex relative justify-center items-center size-full">
             <CldImage
               width={getImageSize(type, image, "width")}
               height={getImageSize(type, image, "height")}
@@ -84,8 +83,14 @@ const TransformedImage = ({
               {...transformationConfig}
             />
             {isTransforming && (
-              <div className="flex justify-center items-center min-h-72 w-full flex-col gap-2 rounded-xl">
-                <Image src="/assets/loader.png" alt="loader..." height={50} width={50} />
+              <div className="h-full w-full rounded-xl bg-slate-500 animate-pulse absolute">
+                <div className="flex flex-col gap-3 justify-center size-full items-center">
+                  <div className="loader">
+                    <div className="loader_cube loader_cube--color"></div>
+                    <div className="loader_cube loader_cube--glowing"></div>
+                  </div>
+                  <p className="text-md text-blue-500 font-bold">AI is transforming...</p>
+                </div>
               </div>
             )}
           </div>
