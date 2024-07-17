@@ -1,10 +1,13 @@
-import { dataUrl, debounce, getImageSize } from "@/lib/utils";
+"use client";
+
+import { dataUrl, debounce, download, getImageSize } from "@/lib/utils";
 import { Download } from "lucide-react";
-import { CldImage } from "next-cloudinary";
+import { CldImage, getCldImageUrl } from "next-cloudinary";
 import { useTheme } from "next-themes";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React from "react";
+import toast from "react-hot-toast";
 
 const TransformedImage = ({
   image,
@@ -17,7 +20,25 @@ const TransformedImage = ({
 }: TransformedImageProps) => {
   const { resolvedTheme } = useTheme();
 
-  const downloadHandler = () => {};
+  const downloadHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    toast.success("Downloading your image...",
+      {
+        style: {
+          borderRadius: "10px",
+          background: "#16a34a",
+          color: "#fff"
+        },
+        duration: 4000
+      }
+    );
+    download(getCldImageUrl({
+      width: image?.width,
+      height: image?.height,
+      src: image?.publicId,
+      ...transformationConfig
+    }), title)
+  }
 
   return (
     <div className="flex flex-col size-full gap-4">
@@ -63,7 +84,7 @@ const TransformedImage = ({
               {...transformationConfig}
             />
             {isTransforming && (
-              <div className="flex justify-center items-center h-full w-full flex-col gap-2 rounded-xl">
+              <div className="flex justify-center items-center min-h-72 w-full flex-col gap-2 rounded-xl">
                 <Image src="/assets/loader.png" alt="loader..." height={50} width={50} />
               </div>
             )}

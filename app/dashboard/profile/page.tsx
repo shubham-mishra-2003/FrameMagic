@@ -15,11 +15,11 @@ const Profile = () => {
   if (loading) return <ProfileLoader />;
 
   return (
-    <div className="flex md:p-10 py-7 sm:p-7 p-5 size-full flex-col">
+    <div className="flex md:p-8 sm:p-7 p-5 size-full flex-col">
       <div className="flex justify-between items-center">
-        <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-extrabold">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-extrabold">
           Profile
-        </h3>
+        </h1>
         <div className="flex items-center justify-center gap-2">
           <ModeSwitch />
         </div>

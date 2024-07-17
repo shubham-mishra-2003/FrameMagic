@@ -87,3 +87,4 @@ export async function getImage(imageId: string) {
     handleError(error);
   }
 }
+

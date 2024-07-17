@@ -27,11 +27,11 @@ const MobileSidebar = () => {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger className="flex lg:hidden px-4">
+      <SheetTrigger className="flex lg:hidden md:px-4 px-1">
         <AlignCenter />
       </SheetTrigger>
       <SheetContent
-        className={`flex p-0 w-[270px] flex-col ${resolvedTheme == "dark"
+        className={`flex p-0 w-[290px] flex-col ${resolvedTheme == "dark"
           ? "bg-black"
           : "bg-slate-100"}`}
       >

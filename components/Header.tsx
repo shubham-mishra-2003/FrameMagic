@@ -15,7 +15,7 @@ const DashboardHeader = ({ title = "", subtitle = "" }) => {
   if (Loading) return <HeadLoader />;
 
   return (
-    <div className="flex w-full left-0 p-5 justify-between items-center">
+    <div className="flex md:p-8 sm:p-7 p-5 w-full">
       <div className="flex flex-col justify-center md:gap-3 gap-1">
         <h1
           className={`${resolvedTheme == "dark"

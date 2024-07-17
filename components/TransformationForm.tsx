@@ -210,7 +210,7 @@ const TransformationForm = ({
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="px-5 flex gap-4 flex-col"
+        className="px-8 flex gap-4 flex-col"
       >
         {creditBalance < Math.abs(creditFee) && <InsufficientCredits />}
         <CustomField
