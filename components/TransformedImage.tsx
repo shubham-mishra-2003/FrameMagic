@@ -40,7 +40,7 @@ const TransformedImage = ({
   }
 
   return (
-    <div className="flex flex-col size-full gap-6">
+    <div className="flex flex-col size-full gap-4">
       <div className="flex justify-between items-center">
         <h3
           className={`font-extrabold text-3xl ${resolvedTheme == "dark"

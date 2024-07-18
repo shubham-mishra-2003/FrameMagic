@@ -6,7 +6,7 @@ import TransformedImage from "@/components/TransformedImage";
 import { Button } from "@/components/ui/button";
 import { getImage } from "@/lib/actions/image.actions";
 import { getImageSize } from "@/lib/utils";
-// import { DeleteConfirmation } from "@/components/shared/DeleteConfirmation";
+import { DeleteConfirmation } from "@/components/DeleteConfirmation";
 
 const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
   const { userId } = auth();
@@ -65,7 +65,6 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
 
       <div>
         <div className="grid h-fit min-h-[200px] grid-cols-1 gap-5 md:grid-cols-2">
-          {/* MEDIA UPLOADER */}
           <div className="flex flex-col gap-6">
             <h3 className="font-extrabold text-3xl text-blue-500">Original</h3>
             <Image
@@ -88,16 +87,18 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
         </div>
 
         {userId === image.author.clerkId &&
-          <div className="mt-6 mb-6">
+          <div className="mt-6 mb-6 flex flex-col gap-4">
             <Button
               asChild
               type="button"
               className="w-full bg-gradient-to-tr to-blue-600 from-violet-600 text-white p-7 font-bold text-lg rounded-full hover:to-violet-700 hover:from-blue-700 delay-75"
             >
-              <Link href={`/dashboard/tools/${image._id}/update`}>Update Image</Link>
+              <Link href={`/dashboard/tools/${image._id}/update`}>
+                Update Image
+              </Link>
             </Button>
 
-            {/* <DeleteConfirmation imageId={image._id} /> */}
+            <DeleteConfirmation imageId={image._id} />
           </div>}
       </div>
     </div>
