@@ -1,37 +1,37 @@
 const SideBar = [
   {
     title: "Home",
-    href: "dashboard",
+    href: "",
     icon: "/assets/house.png"
   },
   {
     title: "Image Restore",
-    href: "dashboard/tools/add/restore",
+    href: "tools/add/restore",
     icon: "/assets/image-down.png"
   },
   {
-    title: "Generate Fill",
-    href: "dashboard/tools/add/fill",
+    title: "Image Resize",
+    href: "tools/add/fill",
     icon: "/assets/atom.png"
   },
   {
     title: "Object Remove",
-    href: "dashboard/tools/add/remove",
+    href: "tools/add/remove",
     icon: "/assets/eraser.png"
   },
   {
     title: "Object Recolor",
-    href: "dashboard/tools/add/recolor",
+    href: "tools/add/recolor",
     icon: "/assets/paint-roller.png"
   },
   {
     title: "Background Remove",
-    href: "dashboard/tools/add/removeBackground",
+    href: "tools/add/removeBackground",
     icon: "/assets/file-x-2.png"
   },
   {
     title: "Profile",
-    href: "dashboard/profile",
+    href: "profile",
     icon: "/assets/user-round.png"
   }
 ];
@@ -103,35 +103,35 @@ export const toolType = {
     title: "Restore Image",
     subTitle: "Refine images by removing noise and imperfections",
     config: { restore: true },
-    icon: "image.svg"
+    icon: "assets/image-down.png"
   },
   removeBackground: {
     type: "removeBackground",
     title: "Background Remove",
     subTitle: "Removes the background of the image using AI",
     config: { removeBackground: true },
-    icon: "camera.svg"
+    icon: "assets/file-x-2.png"
   },
   fill: {
     type: "fill",
     title: "Generative Fill",
     subTitle: "Enhance an image's dimensions using AI outpainting",
     config: { fillBackground: true },
-    icon: "stars.svg"
+    icon: "assets/atom.png"
   },
   remove: {
     type: "remove",
     title: "Object Remove",
     subTitle: "Identify and eliminate objects from images",
     config: { remove: { prompt: "", removeShadow: true, multiple: true } },
-    icon: "scan.svg"
+    icon: "assets/eraser.png"
   },
   recolor: {
     type: "recolor",
     title: "Object Recolor",
     subTitle: "Identify and recolor objects from the image",
     config: { recolor: { prompt: "", to: "", multiple: true } },
-    icon: "filter.svg"
+    icon: "assets/paint-roller.png"
   }
 };
 

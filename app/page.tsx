@@ -1,26 +1,13 @@
-import Aboutus from "@/components/homepage/Aboutus";
-import Cards from "@/components/homepage/Cards";
-import Contactus from "@/components/homepage/Contactus";
-import Footer from "@/components/homepage/Footer";
-import Header from "@/components/homepage/Header";
-import MainSection from "@/components/homepage/MainSection";
-import Pricing from "@/components/homepage/Pricing";
-import ScrollButton from "@/components/homepage/ScrollButton";
-import React from "react";
+import { auth } from "@clerk/nextjs";
+import Dashboard from "@/components/Dashboard";
+import LandingPage from "@/components/homepage/LandingPage";
 
 const page = () => {
-  return (
-    <div>
-      <Header />
-      <MainSection />
-      <Cards />
-      <Pricing />
-      <Aboutus />
-      <Contactus />
-      <Footer />
-      <ScrollButton />
-    </div>
-  );
+  const { userId } = auth();
+  if (!userId) {
+    return <LandingPage />;
+  }
+  return <Dashboard />;
 };
 
 export default page;

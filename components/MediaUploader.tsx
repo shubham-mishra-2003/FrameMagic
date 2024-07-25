@@ -71,7 +71,7 @@ const MediaUploader = ({
 
   return (
     <CldUploadWidget
-      uploadPreset="_imagica"
+      uploadPreset="imagica"
       options={{ multiple: false, resourceType: "image" }}
       onSuccess={onUploadSuccessHandler}
       onError={onUploadErrorHandler}

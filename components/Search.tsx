@@ -45,7 +45,6 @@ export const Search = () => {
         width={24}
         height={24}
       />
-
       <Input
         className="search-field"
         placeholder="Search"

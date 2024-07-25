@@ -35,7 +35,7 @@ export const InsufficientCredits = () => {
               Insufficient Credits
             </p>
             <AlertDialogCancel
-              onClick={() => router.push("/dashboard/profile")}
+              onClick={() => router.push("/profile")}
               className="border-0 p-0"
             >
               <Image
@@ -68,13 +68,13 @@ export const InsufficientCredits = () => {
         <AlertDialogFooter>
           <AlertDialogCancel
             className="button w-full"
-            onClick={() => router.push("/dashboard/profile")}
+            onClick={() => router.push("/profile")}
           >
             No, Cancel
           </AlertDialogCancel>
           <AlertDialogAction
             className="w-full bg-green-500"
-            onClick={() => router.push("/dashboard/credits")}
+            onClick={() => router.push("/credits")}
           >
             Yes, Proceed
           </AlertDialogAction>

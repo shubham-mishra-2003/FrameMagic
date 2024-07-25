@@ -9,7 +9,15 @@ import { toolType } from "@/constants";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 
-const ProfileClient = ({ user, images }: { user: any; images: IImage[] }) => {
+const ProfileClient = ({
+  user,
+  images,
+  imageData
+}: {
+  user: any;
+  images: IImage[];
+  imageData: any;
+}) => {
   const router = useRouter();
   const { resolvedTheme } = useTheme();
 
@@ -81,11 +89,13 @@ const ProfileClient = ({ user, images }: { user: any; images: IImage[] }) => {
               width={80}
               className="w-20 h-20"
             />
-            <h3 className={`text-4xl font-bold`}>10</h3>
+            <h3 className={`text-4xl font-bold`}>
+              {imageData.length}
+            </h3>
           </div>
         </div>
       </div>
-      <div className="flex py-5 gap-5 flex-col">
+      {/* <div className="flex py-5 gap-5 flex-col">
         <h3 className="font-bold text-2xl">Recently Edited</h3>
         <div
           className={`w-full min-h-[350px] max-h-[450px] border-2 rounded-xl flex overflow-y-auto flex-col shadow-inner ${resolvedTheme ==
@@ -103,7 +113,16 @@ const ProfileClient = ({ user, images }: { user: any; images: IImage[] }) => {
                 <p className="text-lg font-semibold">Empty List</p>
               </div>}
         </div>
-      </div>
+      </div> */}
+      {images.length > 0
+        ? <ul className="collection-list">
+            {images.map(image =>
+              <Card image={image} key={String(image._id)} />
+            )}
+          </ul>
+        : <div className="collection-empty">
+            <p className="p-20-semibold">Empty List</p>
+          </div>}
     </div>
   );
 };
@@ -113,7 +132,7 @@ export default ProfileClient;
 const Card = ({ image }: { image: IImage }) => {
   return (
     <li>
-      <Link href={`/transformations/${image._id}`} className="collection-card">
+      <Link href={`/tools/${image._id}`} className="collection-card">
         <CldImage
           src={image.publicId}
           alt={image.title}
@@ -129,9 +148,8 @@ const Card = ({ image }: { image: IImage }) => {
             {image.title}
           </p>
           <Image
-            src={`/assets/icons/${toolType[
-              image.transformationType as TransformationTypeKey
-            ].icon}`}
+            src={`${toolType[image.transformationType as TransformationTypeKey]
+              .icon}`}
             alt={image.title}
             width={24}
             height={24}

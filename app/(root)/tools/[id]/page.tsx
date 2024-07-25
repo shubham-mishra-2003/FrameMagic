@@ -13,7 +13,7 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
   const image = await getImage(id);
 
   return (
-    <div className="flex flex-col gap-8 md:p-8 sm:p-7 p-5">
+    <div className="flex w-full flex-col gap-8 md:p-8 sm:p-7 p-5">
       <div className="flex flex-col gap-3">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif">
           {image.title}

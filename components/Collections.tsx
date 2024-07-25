@@ -9,20 +9,21 @@ import {
   Pagination,
   PaginationContent,
   PaginationNext,
-  PaginationPrevious
+  PaginationPrevious,
 } from "@/components/ui/pagination";
 import { toolType } from "@/constants";
 import { IImage } from "@/lib/database/models/image.model";
 import { formUrlQuery } from "@/lib/utils";
 
 import { Button } from "./ui/button";
+
 import { Search } from "./Search";
 
 export const Collection = ({
   hasSearch = false,
   images,
   totalPages = 1,
-  page
+  page,
 }: {
   images: IImage[];
   totalPages?: number;
@@ -39,7 +40,7 @@ export const Collection = ({
     const newUrl = formUrlQuery({
       searchParams: searchParams.toString(),
       key: "page",
-      value: pageValue
+      value: pageValue,
     });
 
     router.push(newUrl, { scroll: false });
@@ -52,15 +53,19 @@ export const Collection = ({
         {hasSearch && <Search />}
       </div>
 
-      {images.length > 0
-        ? <ul className="collection-list">
-            {images.map(image => <Card image={image} key={image._id} />)}
-          </ul>
-        : <div className="collection-empty">
-            <p className="p-20-semibold">Empty List</p>
-          </div>}
+      {images.length > 0 ? (
+        <ul className="collection-list">
+          {images.map((image) => (
+            <Card image={image} key={String(image._id)} />
+          ))}
+        </ul>
+      ) : (
+        <div className="collection-empty">
+          <p className="p-20-semibold">Empty List</p>
+        </div>
+      )}
 
-      {totalPages > 1 &&
+      {totalPages > 1 && (
         <Pagination className="mt-10">
           <PaginationContent className="flex w-full">
             <Button
@@ -83,7 +88,8 @@ export const Collection = ({
               <PaginationNext className="hover:bg-transparent hover:text-white" />
             </Button>
           </PaginationContent>
-        </Pagination>}
+        </Pagination>
+      )}
     </>
   );
 };
@@ -107,9 +113,11 @@ const Card = ({ image }: { image: IImage }) => {
             {image.title}
           </p>
           <Image
-            src={`/assets/icons/${toolType[
-              image.transformationType as TransformationTypeKey
-            ].icon}`}
+            src={`${
+              toolType[
+                image.transformationType as TransformationTypeKey
+              ].icon
+            }`}
             alt={image.title}
             width={24}
             height={24}

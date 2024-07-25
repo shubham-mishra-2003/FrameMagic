@@ -36,6 +36,7 @@ const MediumDeviceSidebar = () => {
                 className="flex w-full justify-center items-center"
               >
                 <Link
+                  title={link.title}
                   href={`/${link.href}`}
                   className={`text-[16px] shadow-inner flex rounded-full p-5 ${isActive
                     ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"
@@ -66,6 +67,7 @@ const MediumDeviceSidebar = () => {
                 className="flex w-full justify-center items-center"
               >
                 <Link
+                  title={link.title}
                   href={`/${link.href}`}
                   className={`text-[16px] shadow-inner flex rounded-full p-5 py-[15px] ${isActive
                     ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"

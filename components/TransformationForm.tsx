@@ -119,7 +119,7 @@ const TransformationForm = ({
           if(newImage) {
             form.reset()
             setImage(data)
-            router.push(`/dashboard/tools/${newImage._id}`)
+            router.push(`/tools/${newImage._id}`)
           }
         } catch (error) {
           console.log(error);
@@ -134,10 +134,10 @@ const TransformationForm = ({
               _id: data._id
             },
             userId,
-            path: `/dashboard/tools/${data._id}`
+            path: `/tools/${data._id}`
           })
           if(updatedImage) {
-            router.push(`/dashboard/tools/${updatedImage._id}`)
+            router.push(`/tools/${updatedImage._id}`)
           }
         } catch (error) {
           console.log(error);
@@ -210,7 +210,7 @@ const TransformationForm = ({
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="px-8 flex gap-4 flex-col"
+        className="px-8 w-full flex gap-4 flex-col"
       >
         {creditBalance < Math.abs(creditFee) && <InsufficientCredits />}
         <CustomField

@@ -66,7 +66,7 @@ export async function deleteImage(imageId: string) {
   } catch (error) {
     handleError(error);
   } finally {
-    redirect("/dashboard");
+    redirect("/");
   }
 }
 
