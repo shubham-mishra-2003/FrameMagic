@@ -103,35 +103,35 @@ export const toolType = {
     title: "Restore Image",
     subTitle: "Refine images by removing noise and imperfections",
     config: { restore: true },
-    icon: "assets/image-down.png"
+    icon: "/assets/image-down.png"
   },
   removeBackground: {
     type: "removeBackground",
     title: "Background Remove",
     subTitle: "Removes the background of the image using AI",
     config: { removeBackground: true },
-    icon: "assets/file-x-2.png"
+    icon: "/assets/file-x-2.png"
   },
   fill: {
     type: "fill",
     title: "Generative Fill",
     subTitle: "Enhance an image's dimensions using AI outpainting",
     config: { fillBackground: true },
-    icon: "assets/atom.png"
+    icon: "/assets/atom.png"
   },
   remove: {
     type: "remove",
     title: "Object Remove",
     subTitle: "Identify and eliminate objects from images",
     config: { remove: { prompt: "", removeShadow: true, multiple: true } },
-    icon: "assets/eraser.png"
+    icon: "/assets/eraser.png"
   },
   recolor: {
     type: "recolor",
     title: "Object Recolor",
     subTitle: "Identify and recolor objects from the image",
     config: { recolor: { prompt: "", to: "", multiple: true } },
-    icon: "assets/paint-roller.png"
+    icon: "/assets/paint-roller.png"
   }
 };
 

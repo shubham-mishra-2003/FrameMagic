@@ -5,6 +5,7 @@ import { SideBar } from "@/constants";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import RecentEdits from "./RecentEdits";
 
 const Dashboard = () => {
   const { resolvedTheme } = useTheme();
@@ -58,20 +59,6 @@ const Dashboard = () => {
             </li>
           )}
         </ul>
-      </div>
-
-      <div className="flex py-5 gap-5 flex-col">
-        <h3 className="font-bold text-2xl">Recently Edited</h3>
-        <div
-          className={`w-full min-h-[350px] max-h-[450px] border-2 rounded-xl flex overflow-y-auto flex-col shadow-inner ${resolvedTheme ==
-          "dark"
-            ? "bg-slate-800 border-slate-700"
-            : "bg-slate-100 shadow-slate-300 border-slate-300"}`}
-        >
-          <div className="flex justify-center p-3">
-            <p className="text-lg font-semibold">Empty List</p>
-          </div>
-        </div>
       </div>
     </div>
   );

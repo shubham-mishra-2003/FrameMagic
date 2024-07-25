@@ -8,15 +8,14 @@ import { IImage } from "@/lib/database/models/image.model";
 import { toolType } from "@/constants";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
+import RecentEdits from "../RecentEdits";
 
 const ProfileClient = ({
   user,
   images,
-  imageData
 }: {
   user: any;
   images: IImage[];
-  imageData: any;
 }) => {
   const router = useRouter();
   const { resolvedTheme } = useTheme();
@@ -32,7 +31,7 @@ const ProfileClient = ({
           <h3
             className={`${resolvedTheme == "dark"
               ? "text-slate-300"
-              : "text-slate-500"} font-bold md:text-xl lg:text-2xl`}
+              : "text-slate-600"} font-bold md:text-xl lg:text-2xl`}
           >
             Credits Available
           </h3>
@@ -55,7 +54,7 @@ const ProfileClient = ({
                 router.push("credits");
               }}
               className={`${resolvedTheme == "dark"
-                ? "bg-slate-600 hover:bg-slate-700 hover:shadow-slate-900"
+                ? "bg-slate-700 hover:bg-slate-800 hover:shadow-slate-900"
                 : "bg-slate-200 hover:bg-slate-300 hover:shadow-slate-500"} hover:shadow-inner gap-3 flex items-center justify-between w-fit`}
             >
               <Image
@@ -77,7 +76,7 @@ const ProfileClient = ({
           <h3
             className={`${resolvedTheme == "dark"
               ? "text-slate-300"
-              : "text-slate-500"} font-bold sm:text-xl md:text-sm lg:text-xl`}
+              : "text-slate-600"} font-bold sm:text-xl md:text-sm lg:text-xl`}
           >
             Image Manipulations Done
           </h3>
@@ -90,39 +89,12 @@ const ProfileClient = ({
               className="w-20 h-20"
             />
             <h3 className={`text-4xl font-bold`}>
-              {imageData.length}
+              {images.length}
             </h3>
           </div>
         </div>
       </div>
-      {/* <div className="flex py-5 gap-5 flex-col">
-        <h3 className="font-bold text-2xl">Recently Edited</h3>
-        <div
-          className={`w-full min-h-[350px] max-h-[450px] border-2 rounded-xl flex overflow-y-auto flex-col shadow-inner ${resolvedTheme ==
-          "dark"
-            ? "bg-slate-800 border-slate-700"
-            : "bg-slate-100 shadow-slate-300 border-slate-300"}`}
-        >
-          {images.length > 0
-            ? <ul className="collection-list">
-                {images.map(image =>
-                  <Card image={image} key={image._id} />
-                )}
-              </ul>
-            : <div className="flex justify-center p-3">
-                <p className="text-lg font-semibold">Empty List</p>
-              </div>}
-        </div>
-      </div> */}
-      {images.length > 0
-        ? <ul className="collection-list">
-            {images.map(image =>
-              <Card image={image} key={String(image._id)} />
-            )}
-          </ul>
-        : <div className="collection-empty">
-            <p className="p-20-semibold">Empty List</p>
-          </div>}
+      <RecentEdits images={images} />
     </div>
   );
 };
@@ -130,9 +102,17 @@ const ProfileClient = ({
 export default ProfileClient;
 
 const Card = ({ image }: { image: IImage }) => {
+  const { resolvedTheme } = useTheme();
+
   return (
-    <li>
-      <Link href={`/tools/${image._id}`} className="collection-card">
+    <li className="flex justify-center items-center">
+      <Link
+        href={`/tools/${image._id}`}
+        className={`flex flex-col justify-center border-2 p-2 px-3 rounded-xl gap-2 ${resolvedTheme ==
+        "dark"
+          ? "shadow-xl shadow-slate-900 border-slate-700 bg-slate-900"
+          : "shadow-slate-500 shadow-xl border-slate-400 bg-slate-300"}`}
+      >
         <CldImage
           src={image.publicId}
           alt={image.title}
@@ -143,7 +123,8 @@ const Card = ({ image }: { image: IImage }) => {
           className="h-52 w-full rounded-[10px] object-cover"
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
         />
-        <div className="flex-between">
+        <div className="bg-gray-500 w-full flex h-[1.5px] rounded-lg" />
+        <div className="flex justify-between items-center">
           <p className="p-20-semibold mr-3 line-clamp-1 text-dark-600">
             {image.title}
           </p>
@@ -153,6 +134,7 @@ const Card = ({ image }: { image: IImage }) => {
             alt={image.title}
             width={24}
             height={24}
+            className={`${resolvedTheme == "dark" ? "invert" : ""}`}
           />
         </div>
       </Link>
