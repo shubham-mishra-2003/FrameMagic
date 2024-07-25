@@ -93,7 +93,7 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
               type="button"
               className="w-full bg-gradient-to-tr to-blue-600 from-violet-600 text-white p-7 font-bold text-lg rounded-full hover:to-violet-700 hover:from-blue-700 delay-75"
             >
-              <Link href={`/dashboard/tools/${image._id}/update`}>
+              <Link href={`/tools/${image._id}/update`}>
                 Update Image
               </Link>
             </Button>

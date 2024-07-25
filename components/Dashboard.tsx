@@ -5,7 +5,6 @@ import { SideBar } from "@/constants";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import RecentEdits from "./RecentEdits";
 
 const Dashboard = () => {
   const { resolvedTheme } = useTheme();
