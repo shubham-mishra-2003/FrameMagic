@@ -12,9 +12,9 @@ const LandingPage = () => {
     <div>
       <Header />
       <MainSection />
-      <Aboutus />
       <Cards />
       <Pricing />
+      <Aboutus />
       <Contactus />
       <Footer />
       <ScrollButton />
