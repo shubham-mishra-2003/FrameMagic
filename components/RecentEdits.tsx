@@ -18,7 +18,7 @@ const RecentEdits = ({ images }: { images: IImage[] }) => {
           : "bg-slate-100 shadow-slate-300 border-slate-300"}`}
       >
         {images.length > 0
-          ? <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gap-y-10">
+          ? <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-10">
               {images.map(image =>
                 <Card image={image} key={String(image._id)} />
               )}
