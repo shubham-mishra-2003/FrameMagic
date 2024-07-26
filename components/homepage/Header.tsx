@@ -1,161 +1,126 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import React, { useState } from "react";
 import Logo from "../Logo";
 import ModeSwitch from "../ModeSwitch";
-import { useTheme } from "next-themes";
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { navLinks } from "@/constants";
+import Link from "next/link";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, []);
-
   const { resolvedTheme } = useTheme();
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  if (isLoading)
-    return (
-      <div
-        className={`fixed top-0 z-50 ${resolvedTheme === "dark" ? "bg-black" : "bg-slate-100"}`}
-      >
-        <div className="fixed px-10 flex justify-between items-center w-full h-20 top-0 left-0">
-          <div className="flex gap-3">
-            <div className="bg-slate-300 animate-pulse rounded-xl h-12 w-10" />
-            <div className="bg-slate-300 animate-pulse rounded-xl h-12 w-24" />
-          </div>
-          <div className="bg-slate-300 animate-pulse rounded-xl h-12 md:w-32 w-10" />
-        </div>
-      </div>
-    );
 
   return (
     <div
-      className={`fixed top-0 z-50 flex justify-between px-6 p-2 w-full items-center ${resolvedTheme === "dark" ? "bg-black text-white" : "bg-slate-100 text-black"}`}
+      className={`fixed flex items-center justify-between top-0 left-0 w-full p-3 ${resolvedTheme ==
+      "dark"
+        ? "bg-black"
+        : "bg-slate-100"}`}
     >
-      <div className="container mx-auto flex justify-between items-center p-1">
-        <Logo />
-        <nav className="hidden md:flex space-x-6 lg:space-x-14">
-          <a
-            href="#home"
-            className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
+      <Logo />
+      <div className="hidden md:flex gap-5">
+        {navLinks.map((navBarLinks, index) =>
+          <Link
+            className={`lg:text-2xl text-lg scale-100 hover:scale-110 font-bold hover:border-b-2 border-blue-500 hover:text-blue-500`}
+            key={index}
+            href={`#${navBarLinks.id}`}
           >
-            Home
-          </a>
-          <a
-            href="#features"
-            className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-          >
-            Features
-          </a>
-          <a
-            href="#pricing"
-            className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-          >
-            Pricing
-          </a>
-          <a
-            href="#about"
-            className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-          >
-            About Us
-          </a>
-          <a
-            href="#contact"
-            className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-          >
-            Contact
-          </a>
-        </nav>
-        <div className="hidden md:flex space-x-2 items-center">
-          <a
+            {navBarLinks.title}
+          </Link>
+        )}
+      </div>
+      <div className="flex gap-2 items-center justify-center">
+        <div className="hidden md:flex gap-2">
+          <Link
             href="/login"
-            className={`py-2 px-4 rounded ${resolvedTheme === "dark" ? "text-white hover:bg-gray-500 bg-opacity-50" : "text-black hover:bg-blue-200 bg-opacity-50"}`}
+            className={`px-3 py-1 text-[15px] lg:text-[16px] border-2 font-[500] shadow-inner rounded-md scale-95 hover:scale-100 ${resolvedTheme ==
+            "dark"
+              ? "bg-transparent border-white hover:shadow-slate-500  hover:bg-slate-300 hover:text-black"
+              : "border-black hover:bg-slate-300"}`}
           >
             Login
-          </a>
-          <a
+          </Link>
+          <Link
             href="/register"
-            className={`font-bold py-2 px-4 rounded text-white ${resolvedTheme === "dark" ? "bg-gradient-to-tr from-violet-500 to-blue-500 hover:from-violet-700 hover:to-blue-700" : "bg-gradient-to-tr from-violet-700 to-blue-700 hover:from-violet-500 hover:to-blue-500"}`}
+            className={`bg-gradient-to-r text-[15px] lg:text-[16px] px-3 py-1 border-2 font-[500] rounded-md scale-95 hover:scale-100 ${resolvedTheme ==
+            "dark"
+              ? "to-violet-700 shadow-md from-blue-700 hover:to-violet-900 hover:from-blue-900 border-slate-300 shadow-slate-400"
+              : "to-violet-400 border-slate-200 from-blue-400 shadow-md shadow-slate-500"}`}
           >
-            Sign Up
-          </a>
+            Register
+          </Link>
+        </div>
+        <div className="sm:flex hidden">
           <ModeSwitch />
         </div>
-        <div className="md:hidden flex items-center">
-          <ModeSwitch />
-          <button onClick={toggleMenu} className={ `ml-4 focus:outline-none  ${resolvedTheme === "dark" ? "white" : "black"}`}>
-            {isMenuOpen ? (
-              <FaTimes size={24} />
-            ) : (
-              <FaBars size={24} />
-            )}
-          </button>
-        </div>
+        <SmallHeader />
       </div>
-      {isMenuOpen && (
-        <div className={`md:hidden absolute top-20 left-0 w-full ${resolvedTheme === "dark" ? "text-white bg-slate-800" : "text-black bg-slate-200"}`}>
-          <nav className="flex flex-col space-y-4 p-4 text-center">
-            <a
-              href="#home"
-              className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </a>
-            <a
-              href="#features"
-              className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Features
-            </a>
-            <a
-              href="#pricing"
-              className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Pricing
-            </a>
-            <a
-              href="#about"
-              className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Us
-            </a>
-            <a
-              href="#contact"
-              className={`hover:underline ${resolvedTheme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </a>
-            <a
-              href="/login"
-              className={`py-2 px-4 rounded ${resolvedTheme === "dark" ? "text-white hover:bg-gray-500 bg-opacity-50" : "text-black hover:bg-blue-200 bg-opacity-50"}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Login
-            </a>
-            <a
-              href="/register"
-              className={`font-bold py-2 px-4 rounded text-white ${resolvedTheme === "dark" ? "bg-gradient-to-tr from-violet-500 to-blue-500 hover:from-violet-700 hover:to-blue-700" : "bg-gradient-to-tr from-violet-700 to-blue-700 hover:from-violet-500 hover:to-blue-500"}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Sign Up
-            </a>
-          </nav>
-        </div>
-      )}
     </div>
   );
 };
 
 export default Header;
+
+const SmallHeader = () => {
+  const { resolvedTheme } = useTheme();
+  const [open, setOpen] = useState(false);
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger className="md:hidden flex">
+        {open ? <X height={30} width={30} /> : <Menu height={30} width={30} />}
+      </PopoverTrigger>
+      <PopoverContent
+        className={`px-3 flex gap-3 flex-col md:hidden py-2 mr-3 mt-3 shadow-xl w-[180px] ${resolvedTheme ==
+        "dark"
+          ? "bg-black"
+          : "bg-slate-100"}`}
+      >
+        <div className="flex flex-col justify-center items-center gap-4">
+          {navLinks.map((navBarLinks, index) =>
+            <Link
+              className={`w-full hover:scale-105 text-center border rounded-md p-1 shadow-inner ${resolvedTheme ==
+              "dark"
+                ? "bg-slate-800 border-slate-400 hover:bg-slate-900 shadow-black"
+                : "bg-slate-200 shadow-slate-400 hover:bg-slate-300"}`}
+              key={index}
+              href={`#${navBarLinks.id}`}
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              {navBarLinks.title}
+            </Link>
+          )}
+        </div>
+        <div className="bg-slate-500 text-center py-[1px] w-full rounded-xl" />
+        <div className="flex flex-col gap-2">
+          <Link
+            href="/login"
+            className={`px-3 text-center py-1 text-[16px] border-2 font-[500] shadow-inner rounded-md scale-95 hover:scale-100 ${resolvedTheme ==
+            "dark"
+              ? "bg-transparent border-white hover:shadow-slate-500  hover:bg-slate-300 hover:text-black"
+              : "border-black hover:bg-slate-300"}`}
+          >
+            Login
+          </Link>
+          <Link
+            href="/register"
+            className={`bg-gradient-to-r text-center text-[16px] px-3 py-1 border-2 font-[500] rounded-md scale-95 hover:scale-100 ${resolvedTheme ==
+            "dark"
+              ? "to-violet-700 shadow-md from-blue-700 hover:to-violet-900 hover:from-blue-900 border-slate-300 shadow-slate-400"
+              : "to-violet-400 border-slate-200 from-blue-400 shadow-md shadow-slate-500"}`}
+          >
+            Register
+          </Link>
+        </div>
+        <div className="bg-slate-500 text-center py-[1px] w-full sm:hidden rounded-xl" />
+        <div className="sm:hidden justify-center items-center pb-1 flex">
+          <ModeSwitch ButtonWidth="w-full" ContentWidth="w-40" />
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+};

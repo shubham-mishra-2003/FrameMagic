@@ -58,18 +58,18 @@ const MediumDeviceSidebar = () => {
             );
           })}
         </ul>
-        <ul className="gap-[6px] px-3 p-2 flex flex-col justify-start items-center">
+        <ul className="p-3">
           {SideBar.slice(6).map(link => {
             const isActive = `/${link.href}` === pathname;
             return (
               <li
-                key={link.title}
+                key={link.href}
                 className="flex w-full justify-center items-center"
               >
                 <Link
                   title={link.title}
                   href={`/${link.href}`}
-                  className={`text-[16px] shadow-inner flex rounded-full p-5 py-[15px] ${isActive
+                  className={`text-[16px] shadow-inner flex rounded-full p-5 ${isActive
                     ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"
                     : resolvedTheme === "dark"
                       ? "hover:bg-gray-800 hover:shadow-slate-900 bg-gray-900 text-white"

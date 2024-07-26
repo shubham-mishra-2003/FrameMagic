@@ -11,13 +11,6 @@ const LandingPage = () => {
   return (
     <div>
       <Header />
-      <MainSection />
-      <Aboutus />
-      <Cards />
-      <Pricing />
-      <Contactus />
-      <Footer />
-      <ScrollButton />
     </div>
   );
 };
