@@ -6,6 +6,7 @@ import { SideBar } from "../../constants/index";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import ModeSwitch from "../ModeSwitch";
 
 const Sidebar = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +27,7 @@ const Sidebar = () => {
         : "bg-slate-100"}`}
     >
       <ul className="gap-[6px] p-3 flex flex-col h-full overflow-y-auto justify-start items-center">
-        {SideBar.slice(0, 6).map(link => {
+        {SideBar.map(link => {
           const isActive = `/${link.href}` === pathname;
           return (
             <li
@@ -56,37 +57,9 @@ const Sidebar = () => {
           );
         })}
       </ul>
-      <ul className="gap-[6px] px-3 p-2 flex flex-col justify-start items-center">
-        {SideBar.slice(6).map(link => {
-          const isActive = `/${link.href}` === pathname;
-          return (
-            <li
-              key={link.title}
-              className="flex w-full justify-center items-center"
-            >
-              <Link
-                href={`/${link.href}`}
-                className={`text-[16px] shadow-inner w-full flex justify-between gap-7 items-center rounded-full p-5 py-[15px] ${isActive
-                  ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"
-                  : resolvedTheme === "dark"
-                    ? "hover:bg-gray-800 hover:shadow-slate-900 bg-gray-900 text-white"
-                    : "bg-slate-200 hover:shadow-slate-400 text-black hover:bg-slate-300"}`}
-              >
-                {link.title}
-                <Image
-                  src={link.icon}
-                  height={20}
-                  className={`${isActive
-                    ? "invert"
-                    : resolvedTheme == "dark" ? "invert" : ""}`}
-                  width={20}
-                  alt="sidebar icon"
-                />
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="p-3">
+        <ModeSwitch ButtonSize="w-full h-10" />
+      </div>
     </div>
   );
 };

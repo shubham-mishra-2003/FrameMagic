@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* user-select: none; */
+  user-select: none;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -26,16 +26,6 @@
 *::-webkit-scrollbar-corner {
   background: #f1f1f1;
 }
-
-/* .dark-theme {
-  background-color: #000000;
-  color: ivory;
-}
-
-.light-theme {
-  background: ivory;
-  color: #000;
-} */
 
 .cl-internal-11ttlho,
 .cl-internal-d3snkr,

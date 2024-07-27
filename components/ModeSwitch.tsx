@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Check, ChevronsUpDown } from 'lucide-react';
+import { Check, ChevronsUpDown, SunMoon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Command, CommandGroup, CommandItem, CommandList } from '@/components/ui/command';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useTheme } from 'next-themes';
 
 
-const ModeSwitch = ({ButtonWidth = "w-[90px]", ContentWidth = "w-28"}) => {
+const ModeSwitch = ({ButtonSize = "w-[90px]", ContentSize = "w-28"}) => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
@@ -44,17 +44,20 @@ const ModeSwitch = ({ButtonWidth = "w-[90px]", ContentWidth = "w-28"}) => {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button
+        <div className='p-2'>
+          <Button
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className={`${ButtonWidth} hover:scale-105 font-semibold text-[13px] p-2 items-center justify-between border-2 ${resolvedTheme === 'dark' ? 'bg-slate-900 hover:bg-slate-800 border-slate-400' : 'bg-gray-200 border-slate-400 text-slate-900 shadow-inner hover:shadow-slate-400 hover:bg-slate-300'}`}
+          className={`${ButtonSize} rounded-full font-semibold md:hidden flex text-[13px] items-center justify-between border-2 ${resolvedTheme === 'dark' ? 'bg-slate-900 hover:bg-slate-800 border-slate-400' : 'bg-gray-200 border-slate-400 text-slate-900 shadow-inner hover:shadow-slate-400 hover:bg-slate-300'}`}
         >
           {modes.find((mode) => mode.value === theme)?.label}
           <ChevronsUpDown className='w-4' />
         </Button>
+        <SunMoon />
+        </div>
       </PopoverTrigger>
-      <PopoverContent className={`${ContentWidth} p-0 ${resolvedTheme === 'dark' ? 'bg-slate-800 text-white' : 'bg-gray-100 text-slate-900'}`}>
+      <PopoverContent className={`${ContentSize} p-0 ${resolvedTheme === 'dark' ? 'bg-slate-800 text-white' : 'bg-gray-100 text-slate-900'}`}>
         <Command>
           <CommandList>
             <CommandGroup>

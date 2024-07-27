@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../Logo";
 import ModeSwitch from "../ModeSwitch";
 import { navLinks } from "@/constants";
@@ -11,6 +11,14 @@ import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const { resolvedTheme } = useTheme();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) return <HeaderLoader />;
 
   return (
     <div
@@ -124,3 +132,22 @@ const SmallHeader = () => {
     </Popover>
   );
 };
+
+function HeaderLoader() {
+  return (
+    <div className="bg-black flex p-5 justify-between items-center">
+      <div className="bg-slate-200 w-32 h-12 animate-pulse rounded-lg" />
+      <div className="gap-3 hidden md:flex">
+        <div className="bg-slate-200 w-28 h-12 animate-pulse rounded-lg" />
+        <div className="bg-slate-200 w-28 h-12 animate-pulse rounded-lg" />
+        <div className="bg-slate-200 w-28 h-12 animate-pulse rounded-lg" />
+        <div className="bg-slate-200 w-28 h-12 animate-pulse rounded-lg" />
+      </div>
+      <div className="flex gap-2">
+        <div className="bg-slate-200 md:flex hidden w-16 h-12 animate-pulse rounded-lg" />
+        <div className="bg-slate-200 sm:flex hidden w-16 h-12 animate-pulse rounded-lg" />
+        <div className="bg-slate-200 h-12 animate-pulse sm:w-16 w-12 rounded-lg" />
+      </div>
+    </div>
+  );
+}

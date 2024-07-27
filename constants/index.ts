@@ -1,3 +1,5 @@
+import { CircleDollarSign, Coins } from "lucide-react";
+
 const SideBar = [
   {
     title: "Home",
@@ -27,12 +29,7 @@ const SideBar = [
   {
     title: "Background Remove",
     href: "tools/add/removeBackground",
-    icon: "/assets/file-x-2.png"
-  },
-  {
-    title: "Profile",
-    href: "profile",
-    icon: "/assets/user-round.png"
+    icon: "/assets/bg-remove-icon.png"
   }
 ];
 
@@ -59,11 +56,11 @@ export const plans = [
   {
     _id: 1,
     name: "Free",
-    icon: "/assets/icons/free-plan.svg",
+    icon: "/assets/free.png",
     price: 0,
-    credits: 20,
+    credits: 10,
     inclusions: [
-      { label: "20 Free Credits", isIncluded: true },
+      { label: "10 Free Credits", isIncluded: true },
       { label: "Basic Access to Services", isIncluded: true },
       { label: "Priority Customer Support", isIncluded: false },
       { label: "Priority Updates", isIncluded: false }
@@ -72,11 +69,11 @@ export const plans = [
   {
     _id: 2,
     name: "Pro Package",
-    icon: "/assets/icons/free-plan.svg",
-    price: 40,
-    credits: 120,
+    icon: "/assets/pro-icon.png",
+    price: 39,
+    credits: 100,
     inclusions: [
-      { label: "120 Credits", isIncluded: true },
+      { label: "100 Credits", isIncluded: true },
       { label: "Full Access to Services", isIncluded: true },
       { label: "Priority Customer Support", isIncluded: true },
       { label: "Priority Updates", isIncluded: false }
@@ -85,11 +82,11 @@ export const plans = [
   {
     _id: 3,
     name: "Premium Package",
-    icon: "/assets/icons/free-plan.svg",
+    icon: "/assets/premium-icon.png",
     price: 199,
-    credits: 2000,
+    credits: 1000,
     inclusions: [
-      { label: "2000 Credits", isIncluded: true },
+      { label: "1000 Credits", isIncluded: true },
       { label: "Full Access to Services", isIncluded: true },
       { label: "Priority Customer Support", isIncluded: true },
       { label: "Priority Updates", isIncluded: true }

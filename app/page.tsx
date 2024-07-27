@@ -1,13 +1,18 @@
-import { auth } from "@clerk/nextjs";
+import { auth, SignedIn, SignedOut } from "@clerk/nextjs";
 import Dashboard from "@/components/Dashboard";
 import LandingPage from "@/components/homepage/LandingPage";
 
 const page = () => {
-  const { userId } = auth();
-  if (!userId) {
-    return <LandingPage />;
-  }
-  return <Dashboard />;
+  return (
+    <>
+      <SignedOut>
+        <LandingPage />
+      </SignedOut>
+      <SignedIn>
+        <Dashboard />
+      </SignedIn>
+    </>
+  );
 };
 
 export default page;

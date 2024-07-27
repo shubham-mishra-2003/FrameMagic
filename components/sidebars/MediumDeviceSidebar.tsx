@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ModeSwitch from "../ModeSwitch";
 
 const MediumDeviceSidebar = () => {
   const pathname = usePathname();
@@ -28,7 +29,7 @@ const MediumDeviceSidebar = () => {
     >
       <div className="h-full flex justify-between items-center flex-col">
         <ul className="gap-[6px] p-3 flex flex-col h-full overflow-y-auto justify-start items-center">
-          {SideBar.slice(0, 6).map(link => {
+          {SideBar.map(link => {
             const isActive = `/${link.href}` === pathname;
             return (
               <li
@@ -58,37 +59,7 @@ const MediumDeviceSidebar = () => {
             );
           })}
         </ul>
-        <ul className="p-3">
-          {SideBar.slice(6).map(link => {
-            const isActive = `/${link.href}` === pathname;
-            return (
-              <li
-                key={link.href}
-                className="flex w-full justify-center items-center"
-              >
-                <Link
-                  title={link.title}
-                  href={`/${link.href}`}
-                  className={`text-[16px] shadow-inner flex rounded-full p-5 ${isActive
-                    ? "bg-gradient-to-tr text-white to-blue-600 from-violet-600"
-                    : resolvedTheme === "dark"
-                      ? "hover:bg-gray-800 hover:shadow-slate-900 bg-gray-900 text-white"
-                      : "bg-slate-200 hover:shadow-slate-400 text-black hover:bg-slate-300"}`}
-                >
-                  <Image
-                    src={link.icon}
-                    height={20}
-                    className={`${isActive
-                      ? "invert"
-                      : resolvedTheme == "dark" ? "invert" : ""}`}
-                    width={20}
-                    alt="sidebar icon"
-                  />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <ModeSwitch />
       </div>
     </div>
   );

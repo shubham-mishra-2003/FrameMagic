@@ -26,8 +26,8 @@ const ProfileClient = ({ user, images }: { user: any; images: IImage[] }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex justify-center md:gap-20 sm:gap-16 gap-8 md:flex-row flex-col py-10 items-center">
-        <NeonGradientCard>
+      <div className="flex justify-center md:gap-20 sm:gap-16 gap-8 sm:flex-row flex-col py-10 items-center">
+        <NeonGradientCard className="w-full h-full">
           <div
             className={`${resolvedTheme == "dark"
               ? "bg-slate-800 shadow-black shadow-inner"
@@ -74,7 +74,7 @@ const ProfileClient = ({ user, images }: { user: any; images: IImage[] }) => {
             </div>
           </div>
         </NeonGradientCard>
-        <NeonGradientCard>
+        <NeonGradientCard className="h-full w-full">
           <div
             className={`${resolvedTheme == "dark"
               ? "bg-slate-800 shadow-black shadow-inner"
