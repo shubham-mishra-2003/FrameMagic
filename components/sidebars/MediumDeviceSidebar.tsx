@@ -22,7 +22,7 @@ const MediumDeviceSidebar = () => {
 
   return (
     <div
-      className={`hidden pb-1 pt-20 lg:hidden gap-2 flex-col font-bold justify-between md:flex h-full ${resolvedTheme ===
+      className={`hidden pb-2 pt-20 lg:hidden gap-2 flex-col font-bold justify-between md:flex h-full ${resolvedTheme ===
       "dark"
         ? "bg-black"
         : "bg-slate-100"}`}
@@ -59,7 +59,7 @@ const MediumDeviceSidebar = () => {
             );
           })}
         </ul>
-        <ModeSwitch />
+        <ModeSwitch hidden={false} ButtonSize="w-fit" />
       </div>
     </div>
   );

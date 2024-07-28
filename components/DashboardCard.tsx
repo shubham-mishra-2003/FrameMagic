@@ -13,11 +13,7 @@ const DashboardCard = () => {
   return (
     <NeonGradientCard className="h-full w-full" borderRadius={30} borderSize={7} >
       <div
-        className={`flex relative flex-col justify-center gap-8 sm:gap-10 md:gap-12 items-center py-10 px-8 rounded-3xl bg-gradient-to-tr ${resolvedTheme ==
-        "dark"
-          ? "to-violet-500 from-blue-500 shadow-2xl shadow-black"
-          : "to-violet-400 from-blue-400 shadow-inner shadow-slate-300"}`}
-      >
+        className="flex relative flex-col justify-center gap-8 sm:gap-10 md:gap-12 items-center py-10 px-8 rounded-3xl">
         <h3 className="text-xl sm:text-2xl text-center md:text-3xl lg:text-4xl font-extrabold font-serif">
           Unleash your creativity with Imagica AI
         </h3>

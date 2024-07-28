@@ -21,12 +21,12 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`hidden pb-1 pt-20 md:hidden gap-2 flex-col font-bold justify-between lg:flex h-full ${resolvedTheme ===
+      className={`hidden p-3 pb-2 pt-24 md:hidden gap-2 flex-col font-bold justify-between lg:flex h-full ${resolvedTheme ===
       "dark"
         ? "bg-black"
         : "bg-slate-100"}`}
     >
-      <ul className="gap-[6px] p-3 flex flex-col h-full overflow-y-auto justify-start items-center">
+      <ul className="gap-[6px] flex flex-col h-full overflow-y-auto justify-start items-center">
         {SideBar.map(link => {
           const isActive = `/${link.href}` === pathname;
           return (
@@ -57,9 +57,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
-      <div className="p-3">
-        <ModeSwitch ButtonSize="w-full h-10" />
-      </div>
+      <ModeSwitch ButtonSize="w-full" ContentSize="w-44" hidden={true} />
     </div>
   );
 };
