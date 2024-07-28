@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed flex items-center justify-between top-0 left-0 w-full p-3 ${resolvedTheme ==
+      className={`fixed z-10 flex items-center justify-between top-0 left-0 w-full p-3 ${resolvedTheme ==
       "dark"
         ? "bg-black"
         : "bg-slate-100"}`}
@@ -61,7 +61,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="sm:flex hidden">
-          <ModeSwitch ContentSize="w-28" />
+          <ModeSwitch ContentSize="w-28" hidden={true} />
         </div>
         <div className="sm:hidden">
           <ModeSwitch hidden={false} ButtonSize="w-fit" />

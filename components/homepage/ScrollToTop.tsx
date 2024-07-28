@@ -4,7 +4,7 @@ import { ChevronUp } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
-const ScrollButton = () => {
+const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -47,4 +47,4 @@ const ScrollButton = () => {
   );
 };
 
-export default ScrollButton;
+export default ScrollToTop;
