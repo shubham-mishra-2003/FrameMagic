@@ -63,6 +63,9 @@ const Header = () => {
         <div className="sm:flex hidden">
           <ModeSwitch />
         </div>
+        <div className="sm:hidden">
+          <ModeSwitch hidden={false} ButtonSize="w-fit" />
+        </div>
         <SmallHeader />
       </div>
     </div>
@@ -123,10 +126,6 @@ const SmallHeader = () => {
           >
             Register
           </Link>
-        </div>
-        <div className="bg-slate-500 text-center py-[1px] w-full sm:hidden rounded-xl" />
-        <div className="sm:hidden justify-center items-center pb-1 flex">
-          <ModeSwitch ButtonWidth="w-full" ContentWidth="w-40" />
         </div>
       </PopoverContent>
     </Popover>
