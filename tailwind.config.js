@@ -11,6 +11,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         backgroundPositionSpin:
           "background-position-spin 1000ms infinite alternate"
       },
@@ -18,7 +19,12 @@ module.exports = {
         "background-position-spin": {
           "0%": { backgroundPosition: "top center" },
           "100%": { backgroundPosition: "bottom center" }
-        }
+        },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
       }
     }
   },

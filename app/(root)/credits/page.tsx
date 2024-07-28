@@ -50,7 +50,7 @@ const BuyCredits = () => {
             <Button
               onClick={() => {
                 toast.error(
-                  <div className="bg-red-500 flex text-white">
+                  <div className="bg-red-500 text-center flex text-white">
                     We are currently not accepting payments
                   </div>,
                   {

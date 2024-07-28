@@ -109,48 +109,6 @@ const ProfileClient = ({ user, images }: { user: any; images: IImage[] }) => {
 
 export default ProfileClient;
 
-const Card = ({ image }: { image: IImage }) => {
-  const { resolvedTheme } = useTheme();
-
-  return (
-    <li className="flex justify-center items-center">
-      <Link
-        href={`/tools/${image._id}`}
-        className={`flex flex-col justify-center border-2 p-2 px-3 rounded-xl gap-2 ${resolvedTheme ==
-        "dark"
-          ? "shadow-xl shadow-slate-900 border-slate-700 bg-slate-900"
-          : "shadow-slate-500 shadow-xl border-slate-400 bg-slate-300"}`}
-      >
-        <CldImage
-          src={image.publicId}
-          alt={image.title}
-          width={image.width}
-          height={image.height}
-          {...image.config}
-          loading="lazy"
-          className="h-52 w-full rounded-[10px] object-cover"
-          sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
-        />
-        <div className="bg-gray-500 w-full flex h-[1.5px] rounded-lg" />
-        <div className="flex justify-between items-center">
-          <p className="p-20-semibold mr-3 line-clamp-1 text-dark-600">
-            {image.title}
-          </p>
-          <Image
-            src={`${toolType[image.transformationType as TransformationTypeKey]
-              .icon}`}
-            alt={image.title}
-            width={24}
-            height={24}
-            className={`${resolvedTheme == "dark" ? "invert" : ""}`}
-          />
-        </div>
-      </Link>
-    </li>
-  );
-};
-
-
 const ProfileLoading = () =>{
   return(
     <div className="flex pt-10 justify-between items-center">

@@ -37,10 +37,10 @@ const Card = ({ image }: { image: IImage }) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <li className="flex justify-center items-center">
+    <li className="flex justify-center items-center w-full">
       <Link
         href={`/tools/${image._id}`}
-        className={`flex flex-col justify-center border-2 p-2 px-3 rounded-xl gap-2 ${resolvedTheme ==
+        className={`flex flex-col w-full justify-center border-2 p-2 px-3 rounded-xl gap-2 ${resolvedTheme ==
         "dark"
           ? "shadow-xl shadow-slate-900 border-slate-700 bg-slate-900"
           : "shadow-slate-500 shadow-xl border-slate-400 bg-slate-300"}`}

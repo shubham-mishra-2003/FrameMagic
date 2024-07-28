@@ -44,7 +44,7 @@ const ModeSwitch = ({ButtonSize = "w-[90px]", ContentSize = "w-28", hidden = tru
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <div className={`p-2 rounded-full ${ButtonSize} ${resolvedTheme === 'dark' ? 'bg-slate-900 hover:bg-slate-800 border-slate-400' : 'bg-slate-200 border-slate-400 text-slate-900 shadow-inner hover:shadow-slate-400 hover:bg-slate-300'}`}>
-          <div className={`font-bold ${!hidden ? 'hidden' : 'flex'} lg:flex text-[13px] p-1 items-center w-full justify-between`}>
+          <div className={`font-bold px-2 ${!hidden ? 'hidden' : 'flex'} lg:flex text-[13px] p-1 items-center w-full justify-between`}>
             {modes.find((mode) => mode.value === theme)?.label}
             <ChevronsUpDown className='w-4' />
           </div>
