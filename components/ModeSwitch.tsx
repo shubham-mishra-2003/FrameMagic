@@ -43,12 +43,12 @@ const ModeSwitch = ({ButtonSize = "w-[90px]", ContentSize = "w-28", hidden = tru
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <div className={`p-2 md:p-3 rounded-full ${ButtonSize} ${resolvedTheme === 'dark' ? 'bg-slate-900 hover:bg-slate-800 border-slate-400' : 'bg-slate-200 border-slate-400 text-slate-900 shadow-inner hover:shadow-slate-400 hover:bg-slate-300'}`}>
-          <div className={`font-bold ${!hidden ? 'hidden' : 'flex'} lg:flex text-[13px] items-center w-full justify-between`}>
+        <div className={`p-2 rounded-full ${ButtonSize} ${resolvedTheme === 'dark' ? 'bg-slate-900 hover:bg-slate-800 border-slate-400' : 'bg-slate-200 border-slate-400 text-slate-900 shadow-inner hover:shadow-slate-400 hover:bg-slate-300'}`}>
+          <div className={`font-bold ${!hidden ? 'hidden' : 'flex'} lg:flex text-[13px] p-1 items-center w-full justify-between`}>
             {modes.find((mode) => mode.value === theme)?.label}
             <ChevronsUpDown className='w-4' />
           </div>
-          <div className={`${hidden ? 'hidden' : 'block'}`}>
+          <div className={`${hidden ? 'hidden' : 'block'} p-0 md:p-2`}>
             {resolvedTheme == "dark" ? <Moon /> : <Sun />}
           </div>
         </div>
@@ -62,7 +62,7 @@ const ModeSwitch = ({ButtonSize = "w-[90px]", ContentSize = "w-28", hidden = tru
                   key={mode.value}
                   value={mode.value}
                   onSelect={() => handleThemeChange(mode.value)}
-                  className={`${resolvedTheme === 'dark' ? 'hover:bg-slate-700 hover:shadow-black' : 'hover:bg-gray-300 hover:shadow-slate-400'} hover:shadow-inner rounded-md font-semibold cursor-pointer lg:gap-5 flex w-full`}
+                  className={`${resolvedTheme === 'dark' ? 'hover:bg-slate-700 hover:shadow-black' : 'hover:bg-gray-300 hover:shadow-slate-400'} hover:shadow-inner rounded-md font-semibold cursor-pointer gap-2 flex w-full`}
                 >
                   <Check
                     className={`mr-2 h-4 w-4 ${theme === mode.value ? 'opacity-100' : 'opacity-0'}`}

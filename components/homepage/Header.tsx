@@ -61,7 +61,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="sm:flex hidden">
-          <ModeSwitch />
+          <ModeSwitch ContentSize="w-28" />
         </div>
         <div className="sm:hidden">
           <ModeSwitch hidden={false} ButtonSize="w-fit" />
@@ -144,7 +144,7 @@ function HeaderLoader() {
       </div>
       <div className="flex gap-2">
         <div className="bg-slate-200 md:flex hidden w-16 h-12 animate-pulse rounded-lg" />
-        <div className="bg-slate-200 sm:flex hidden w-16 h-12 animate-pulse rounded-lg" />
+        <div className="bg-slate-200 flex sm:w-16 w-10 rounded-full h-12 animate-pulse sm:rounded-lg" />
         <div className="bg-slate-200 h-12 animate-pulse sm:w-16 w-12 rounded-lg" />
       </div>
     </div>
