@@ -31,11 +31,11 @@ const ScrollToTop = () => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <div>
+    <>
       {isVisible &&
         <button
           title="scroll to top"
-          className={`fixed bottom-10 right-7 p-3 rounded-full border-none cursor-pointer ${resolvedTheme ==
+          className={`fixed z-50 bottom-[20px] right-[20px] p-3 rounded-full border-none cursor-pointer ${resolvedTheme ==
           "dark"
             ? "bg-black hover:bg-gradient-to-tr from-violet-500 to-blue-500"
             : "bg-slate-300 hover:bg-gradient-to-tr from-violet-400 to-blue-400"}`}
@@ -43,7 +43,7 @@ const ScrollToTop = () => {
         >
           <ChevronUp size={30} />
         </button>}
-    </div>
+    </>
   );
 };
 

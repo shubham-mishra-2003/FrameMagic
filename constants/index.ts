@@ -1,4 +1,10 @@
-import { CircleDollarSign, Coins } from "lucide-react";
+import {
+  backgroundRemove,
+  imageResize,
+  imageRestore,
+  objectRecolor,
+  objectRemove
+} from "@/components/homepage/FeaturesImages";
 
 const SideBar = [
   {
@@ -52,7 +58,7 @@ const navLinks = [
   },
   {
     title: "Contact",
-    id: 'contact'
+    id: "contact"
   }
 ];
 
@@ -166,5 +172,73 @@ export const defaultValues = {
 };
 
 export const creditFee = -1;
+
+export const features = [
+  {
+    heading: "Image Restore",
+    description:
+      "Breathe new life into old and damaged photographs. Our state-of-the-art restoration tool uses advanced AI algorithms to meticulously repair scratches, tears, and color fading. Whether it's a treasured family photo or a historic image, we'll help you preserve your memories for future generations.",
+    keyPoints: [
+      "AI-powered restoration",
+      "Remove scratches, tears, and stains",
+      "Enhance colors and details",
+      "Restore faded photographs"
+    ],
+    image: imageRestore,
+    imageSide: "left"
+  },
+  {
+    heading: "Image Resize",
+    description:
+      "Resize your images without compromising on quality. Our tool intelligently resizes images to fit your needs, whether it's for social media, websites, or print. Enjoy high-quality results every time.",
+    keyPoints: [
+      "Maintain image quality",
+      "Custom dimensions for web, social media, and print",
+      "Batch resizing for multiple images",
+      "Aspect ratio control"
+    ],
+    image: imageResize,
+    imageSide: "right"
+  },
+  {
+    heading: "Object Remover",
+    description:
+      "Effortlessly remove unwanted objects from your photos. Our object remover tool uses seamless background filling technology to ensure that the area previously occupied by the object blends perfectly with its surroundings.",
+    keyPoints: [
+      "Remove any object with a few clicks",
+      "Seamless background filling",
+      "Preserve image quality",
+      "Ideal for removing people, logos, or any distractions"
+    ],
+    image: objectRemove,
+    imageSide: "left"
+  },
+  {
+    heading: "Object Recolor",
+    description:
+      "Change the color of any object in your photo with precision. Whether you're looking to change the color of clothes, vehicles, or other objects, our recolor tool provides accurate and realistic color transformations.",
+    keyPoints: [
+      "Precise color change",
+      "Realistic color blending",
+      "Supports a wide range of colors",
+      "Easy-to-use interface"
+    ],
+    image: objectRecolor,
+    imageSide: "right"
+  },
+  {
+    heading: "Background Remover",
+    description:
+      "Instantly remove backgrounds from images to create transparent or new backgrounds. Perfect for product photos, professional headshots, and creative projects, our background remover tool simplifies the process of isolating subjects from their backgrounds.",
+    keyPoints: [
+      "One-click background removal",
+      "High-quality transparent backgrounds",
+      "Replace backgrounds with custom images",
+      "Supports complex edges like hair and fur"
+    ],
+    image: backgroundRemove,
+    imageSide: "left"
+  }
+];
 
 export { SideBar, navLinks };
