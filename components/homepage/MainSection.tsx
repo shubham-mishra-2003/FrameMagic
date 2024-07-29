@@ -11,9 +11,16 @@ const SkeletonLoader = () => {
   return (
     <div className="container mx-auto my-10 px-6 py-14 text-center">
       <div className="animate-pulse">
-        <div className="bg-gray-300 h-12 w-3/4 mx-auto mt-4 mb-6 pt-24 rounded-lg " />
-        <div className="bg-gray-300 h-6 w-1/2 mx-auto mb-6 rounded-lg" />
-        <div className="bg-gray-300 h-12 w-1/4 mx-auto mt-4 rounded-full" />
+        <div className="bg-gray-300 h-12 w-80 mx-auto mb-6 rounded-lg" />
+        <div className="bg-gray-300 h-5 w-3/4 mx-auto mt-4 mb-6 pt-14 rounded-xl " />
+        <div className="bg-gray-300 h-7 w-2/3 mx-auto mb-6 rounded-lg" />
+        <div>
+          <div className="bg-gray-300 h-12 w-40 mx-auto mt-18 rounded-full" />
+          <div className="bg-gray-300 h-6 w-1/3 mx-auto mt-8 rounded-lg" />
+        </div>
+        <div>
+          <div className="bg-gray-300 h-96 w-2/4 mx-auto mt-8 rounded-lg" />
+        </div>
       </div>
     </div>
   );
@@ -22,7 +29,6 @@ const SkeletonLoader = () => {
 const MainSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { resolvedTheme } = useTheme();
-
 
   useEffect(() => {
     setIsLoading(false);
@@ -35,7 +41,9 @@ const MainSection = () => {
       id="home"
       className="min-h-screen pt-28 flex flex-col justify-center items-center md:gap-10 sm:gap-8 gap-6 p-6"
     >
-      <div className="flex gap-3 bg-gradient-to-tr to-violet-500 from-blue-500 p-3 rounded-xl text-slate-100 font-bold" ><Medal className="text-yellow-200"/> No.1 app for image edits</div>
+      <div className="flex gap-3 bg-gradient-to-tr to-violet-500 from-blue-500 p-3 rounded-xl text-slate-100 font-bold">
+        <Medal className="text-yellow-200" /> No.1 app for image edits
+      </div>
       <TypingAnimation
         duration={100}
         className="text-2xl font-mono sm:text-3xl md:text-4xl lg:text-5xl text-center font-extrabold"
@@ -58,7 +66,9 @@ const MainSection = () => {
         Don&apos;t have an account ?{" "}
         <Link
           href="/register"
-          className="font-semibold text-blue-500 hover:text-red-500"
+          className={`font-semibold ${resolvedTheme == "dark"
+            ? "text-blue-500 hover:text-blue-800"
+            : "text-blue-800 hover:text-blue-500"}`}
         >
           Create an account
         </Link>
