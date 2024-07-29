@@ -5,16 +5,14 @@ import { useTheme } from "next-themes";
 import Logo from "../Logo";
 import Link from "next/link";
 import { navLinks } from "@/constants";
+import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogTrigger } from "../ui/alert-dialog";
+import { X } from "lucide-react";
 
 const Footer = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    setIsLoading(false)
   }, []);
 
   const { resolvedTheme } = useTheme();
@@ -29,13 +27,17 @@ const Footer = () => {
         : "bg-slate-300"}`}
     >
       <Logo />
-      <div>
-        {navLinks.map((footerLinks, index) =>
-          <Link key={index} href={footerLinks.id}>
-            {footerLinks.title}
-          </Link>
-        )}
-      </div>
+      <AlertDialog>
+        <AlertDialogTrigger>
+          open
+        </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogCancel>
+            <X />
+          </AlertDialogCancel>
+          Shadoo bkl hai
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };

@@ -10,6 +10,35 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const controlHeader = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlHeader);
+      return () => {
+        window.removeEventListener("scroll", controlHeader);
+      };
+    }
+  }, [lastScrollY]);
+
   const { resolvedTheme } = useTheme();
 
   const [loading, setLoading] = useState(true);
@@ -22,10 +51,10 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed z-10 flex items-center justify-between top-0 left-0 w-full p-3 ${resolvedTheme ==
+      className={`fixed z-10 flex items-center justify-between top-0 left-0 w-full transition-transform duration-500 p-3 ${resolvedTheme ==
       "dark"
         ? "bg-black"
-        : "bg-slate-100"}`}
+        : "bg-slate-100"} ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
     >
       <Logo />
       <div className="hidden md:flex gap-5">
