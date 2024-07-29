@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import TypingAnimation from "../magicui/typing-animation";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDownCircle, MoveDownIcon } from "lucide-react";
+import { ChevronDownCircle } from "lucide-react";
 
 const SkeletonLoader = () => {
   return (
@@ -23,23 +23,29 @@ const MainSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { resolvedTheme } = useTheme();
 
+  const [color, setColor] = useState("#000");
+  
   useEffect(() => {
     setIsLoading(false);
+    if (resolvedTheme == "dark") {
+      setColor("#ffffff");
+    }
   }, []);
 
   if (isLoading) return <SkeletonLoader />;
 
+
   return (
     <div
       id="home"
-      className="min-h-screen pt-24 flex flex-col justify-center items-center md:gap-10 sm:gap-8 gap-6 p-6"
+      className="min-h-screen pt-28 flex flex-col justify-center items-center md:gap-10 sm:gap-8 gap-6 p-6"
     >
       <TypingAnimation
         duration={100}
         className="text-2xl font-mono sm:text-3xl md:text-4xl lg:text-5xl text-center font-extrabold"
         text="Get your images transformed with AI tools"
       />
-      <h2 className="text-slate-500 text-center font-bold text-sm sm:text-xl md:text-2xl" >
+      <h2 className="text-slate-500 text-center font-bold text-sm sm:text-xl md:text-2xl">
         AI-powered tools to enhance, edit, and transform your photos
         effortlessly.
       </h2>
@@ -52,12 +58,32 @@ const MainSection = () => {
       >
         Get Started
       </Link>
-      <h3 className="text-sm sm:text-lg md:text-xl text-center font-bold">Don&apos;t have an account ? <Link href="/register" className="font-semibold text-blue-500 hover:text-red-500">Create an account</Link></h3>
-      <div className="relative mt-10 flex">
-        <Image src="/imagicaHome.png" alt="imagica" height={900} width={900} className="border-2 border-slate-500 rounded-xl w-[700px]" />
-        <Image popover="auto" src="/imagicaPhone.png" alt="imagica for phone" height={400} width={250} className="absolute hidden -top-10 left-56 border-2 border-slate-500 rounded-xl sm:flex" />
-      </div>
-      <div className="h-[2px] bg-slate-500 w-full sm:mt-20 mt-4 rounded-full"></div>
+      <h3 className="text-sm sm:text-lg md:text-xl text-center font-bold">
+        Don&apos;t have an account ?{" "}
+        <Link
+          href="/register"
+          className="font-semibold text-blue-500 hover:text-red-500"
+        >
+          Create an account
+        </Link>
+      </h3>
+      {resolvedTheme == "dark"
+        ? <Image
+            src="/HomeDark.png"
+            alt="imagica"
+            height={900}
+            width={900}
+            className="border-2 border-slate-500 rounded-xl w-[800px]"
+          />
+        : <Image
+            src="/imagicaHome.png"
+            alt="imagica"
+            height={900}
+            width={900}
+            className="border-2 border-slate-500 rounded-xl w-[800px]"
+          />}
+
+      <div className="h-[2px] bg-slate-500 w-full sm:mt-20 mt-4 rounded-full" />
       <Link href="#about" className="flex justify-center gap-3 items-center">
         <h3>See what wee can do</h3>
         <ChevronDownCircle height={30} width={30} />

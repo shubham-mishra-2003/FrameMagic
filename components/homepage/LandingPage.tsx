@@ -17,6 +17,7 @@ const LandingPage = () => {
       <AboutUs />
       <Contact />
       <ScrollToTop />
+      <Footer />
     </div>
   );
 };

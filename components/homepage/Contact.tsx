@@ -2,7 +2,6 @@ import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useTheme } from "next-themes";
-import ModeSwitch from "../ModeSwitch";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Image from "next/image";
@@ -29,8 +28,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_ebwx2qj",
-        "template_fyigrvt",
+        "service_ha1u87q",
+        "template_wvjwwkf",
         {
           from_name: form.name,
           to_name: "shubham mishra",
@@ -38,7 +37,7 @@ const Contact = () => {
           to_email: "shubhammishra3070@gmail.com",
           message: form.message
         },
-        "NNzjOzVUd4H2JrXWs"
+        "RTFLa2SXLbGrXrc0Y"
       )
       .then(
         () => {
@@ -91,6 +90,20 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         initial="hidden"
         animate="show"
+        className="w-full hidden md:flex justify-center items-center"
+      >
+        <Image
+          src="/logo.png"
+          alt="Imagica"
+          height={300}
+          width={300}
+          className="size-full"
+        />
+      </motion.div>
+      <motion.div
+        variants={slideIn("right", "tween", 0.2, 1)}
+        initial="hidden"
+        animate="show"
         className="flex w-full gap-8 justify-center flex-col p-7 sm:p-10"
       >
         <h2
@@ -105,7 +118,10 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className={`flex border-2 rounded-xl p-4 w-full gap-8 shadow-inner flex-col ${resolvedTheme == "dark" ? 'bg-slate-800 shadow-black border-slate-500' : 'bg-slate-100 shadow-slate-500 border-slate-500'}`}
+          className={`flex border-2 rounded-xl p-4 w-full gap-8 shadow-inner flex-col ${resolvedTheme ==
+          "dark"
+            ? "bg-slate-800 shadow-black border-slate-500"
+            : "bg-slate-100 shadow-slate-500 border-slate-500"}`}
         >
           <label className="flex cursor-pointer flex-col gap-3 justify-center">
             <h3
@@ -171,20 +187,6 @@ const Contact = () => {
             {sending ? "Sending..." : "Send"}
           </Button>
         </form>
-      </motion.div>
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        initial="hidden"
-        animate="show"
-        className="w-full hidden md:flex justify-center items-center"
-      >
-        <Image
-          src="/logo.png"
-          alt="Imagica"
-          height={300}
-          width={300}
-          className="size-full"
-        />
       </motion.div>
     </div>
   );
