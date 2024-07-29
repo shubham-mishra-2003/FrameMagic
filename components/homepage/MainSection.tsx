@@ -23,13 +23,9 @@ const MainSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { resolvedTheme } = useTheme();
 
-  const [color, setColor] = useState("#000");
 
   useEffect(() => {
     setIsLoading(false);
-    if (resolvedTheme == "dark") {
-      setColor("#ffffff");
-    }
   }, []);
 
   if (isLoading) return <SkeletonLoader />;
@@ -39,7 +35,7 @@ const MainSection = () => {
       id="home"
       className="min-h-screen pt-28 flex flex-col justify-center items-center md:gap-10 sm:gap-8 gap-6 p-6"
     >
-      <div className="flex gap-3 bg-gradient-to-tr to-violet-500 from-blue-500 p-3 rounded-xl"><Medal className="text-yellow-200"/> No.1 app for image edits</div>
+      <div className="flex gap-3 bg-gradient-to-tr to-violet-500 from-blue-500 p-3 rounded-xl text-slate-100 font-bold" ><Medal className="text-yellow-200"/> No.1 app for image edits</div>
       <TypingAnimation
         duration={100}
         className="text-2xl font-mono sm:text-3xl md:text-4xl lg:text-5xl text-center font-extrabold"
