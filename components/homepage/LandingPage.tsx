@@ -1,5 +1,3 @@
-"use client";
-
 import AboutUs from "@/components/homepage/Aboutus";
 import Footer from "@/components/homepage/Footer";
 import Header from "@/components/homepage/Header";
@@ -14,6 +12,10 @@ const LandingPage = () => {
       <Header />
       <MainSection />
       <Features />
+      <Pricing />
+      <AboutUs />
+      <Contact />
+      <Footer />
     </div>
   );
 };
