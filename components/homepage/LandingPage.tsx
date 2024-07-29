@@ -14,6 +14,8 @@ const LandingPage = () => {
     <div>
       <Header />
       <MainSection />
+      <Cards />
+      <Pricing />
       <AboutUs />
       <Contact />
       <ScrollToTop />

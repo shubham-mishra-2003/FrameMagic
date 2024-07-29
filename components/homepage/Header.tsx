@@ -141,6 +141,7 @@ function HeaderLoader() {
         <div className="bg-slate-200 w-28 h-12 animate-pulse rounded-lg" />
         <div className="bg-slate-200 w-28 h-12 animate-pulse rounded-lg" />
         <div className="bg-slate-200 w-28 h-12 animate-pulse rounded-lg" />
+        <div className="bg-slate-200 w-28 h-12 animate-pulse rounded-lg" />
       </div>
       <div className="flex gap-2">
         <div className="bg-slate-200 md:flex hidden w-16 h-12 animate-pulse rounded-lg" />

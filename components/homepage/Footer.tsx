@@ -26,7 +26,7 @@ const Footer = () => {
       className={`flex p-3 justify-between items-center ${resolvedTheme ==
       "dark"
         ? "bg-black"
-        : "bg-slate-100"}`}
+        : "bg-slate-300"}`}
     >
       <Logo />
       <div>
