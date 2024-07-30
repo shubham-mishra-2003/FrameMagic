@@ -83,8 +83,8 @@ const Header = () => {
             href="/register"
             className={`bg-gradient-to-r text-[15px] lg:text-[16px] px-3 py-1 border-2 font-[500] rounded-md scale-95 hover:scale-100 ${resolvedTheme ==
             "dark"
-              ? "to-violet-700 shadow-md from-blue-700 hover:to-violet-900 hover:from-blue-900 border-slate-300 shadow-slate-400"
-              : "to-violet-400 border-slate-200 from-blue-400 shadow-md shadow-slate-500"}`}
+              ? "to-violet-700 from-blue-700 hover:to-violet-900 hover:from-blue-900 shadow-md border-slate-300 shadow-slate-400"
+              : "to-violet-500 from-blue-500 hover:to-violet-400 hover:from-blue-400 border-slate-200 shadow-md shadow-slate-500"}`}
           >
             Register
           </Link>
