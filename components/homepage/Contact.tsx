@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { slideIn } from "@/constants/SlideIn";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -56,30 +57,6 @@ const Contact = () => {
           alert("Something went wrong!");
         }
       );
-  };
-
-  const slideIn = (
-    direction: "left" | "right" | "up" | "down",
-    type: string,
-    delay: number,
-    duration: number
-  ) => {
-    return {
-      hidden: {
-        x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
-        y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0
-      },
-      show: {
-        x: 0,
-        y: 0,
-        transition: {
-          type: type,
-          delay: delay,
-          duration: duration,
-          ease: "easeOut"
-        }
-      }
-    };
   };
 
   const { resolvedTheme } = useTheme();

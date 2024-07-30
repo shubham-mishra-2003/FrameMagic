@@ -6,6 +6,7 @@ import TypingAnimation from "../magicui/typing-animation";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDownCircle, Medal } from "lucide-react";
+import ScrollToTop from "./ScrollToTop";
 
 const SkeletonLoader = () => {
   return (
@@ -79,14 +80,14 @@ const MainSection = () => {
             alt="imagica"
             height={900}
             width={900}
-            className="border-2 sm:flex hidden border-slate-500 rounded-xl w-[800px]"
+            className="border-2 sm:flex hidden border-slate-500 rounded-xl w-[800px] hover:scale-105 duration-300"
           />
         : <Image
             src="/imagicaHome.png"
             alt="imagica"
             height={900}
             width={900}
-            className="border-2 sm:flex hidden border-slate-500 rounded-xl w-[800px]"
+            className="border-2 sm:flex hidden border-slate-500 rounded-xl w-[800px] hover:scale-105 duration-300"
           />}
 
       {resolvedTheme == "dark"
@@ -95,14 +96,14 @@ const MainSection = () => {
             alt="imagica"
             height={500}
             width={500}
-            className="border-2 flex sm:hidden border-slate-500 rounded-xl w-[900px]"
+            className="border-2 flex sm:hidden border-slate-500 rounded-xl w-full hover:scale-105 duration-300"
           />
         : <Image
             src="/phoneLight.png"
             alt="imagica"
             height={400}
             width={500}
-            className="border-2 flex sm:hidden border-slate-500 rounded-xl w-[400px]"
+            className="border-2 flex sm:hidden border-slate-500 rounded-xl w-full hover:scale-105 duration-300"
           />}
 
       <div className="h-[2px] bg-slate-500 w-full sm:mt-20 mt-4 rounded-full" />
@@ -110,6 +111,7 @@ const MainSection = () => {
         <h3>See what wee can do</h3>
         <ChevronDownCircle height={30} width={30} />
       </Link>
+      <ScrollToTop />
     </div>
   );
 };
