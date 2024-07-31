@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import TypingAnimation from "../magicui/typing-animation";
 import Link from "next/link";
@@ -41,7 +40,9 @@ const MainSection = () => {
         Don&apos;t have an account ?{" "}
         <Link
           href="/register"
-          className="font-semibold text-blue-500 hover:text-red-500"
+          className={`font-semibold ${resolvedTheme == "dark"
+            ? "text-blue-500 hover:text-blue-800"
+            : "text-blue-800 hover:text-blue-500"}`}
         >
           Create an account
         </Link>
