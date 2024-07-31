@@ -41,8 +41,8 @@ const SideBar = [
 
 const navLinks = [
   {
-    title: "Home",
-    id: "home"
+    title: "About",
+    id: "about"
   },
   {
     title: "Features",
@@ -51,10 +51,6 @@ const navLinks = [
   {
     title: "Pricing",
     id: "pricing"
-  },
-  {
-    title: "About",
-    id: "about"
   },
   {
     title: "Contact",
@@ -67,10 +63,10 @@ export const plans = [
     _id: 1,
     name: "Free",
     icon: "/assets/free.png",
-    price: 0,
-    credits: 10,
+    price: "Free",
+    credits: 5,
     inclusions: [
-      { label: "10 Free Credits", isIncluded: true },
+      { label: "5 Free Credits", isIncluded: true },
       { label: "Basic Access to Services", isIncluded: true },
       { label: "Priority Customer Support", isIncluded: false },
       { label: "Priority Updates", isIncluded: false }
@@ -81,9 +77,9 @@ export const plans = [
     name: "Pro Package",
     icon: "/assets/pro-icon.png",
     price: 39,
-    credits: 100,
+    credits: 50,
     inclusions: [
-      { label: "100 Credits", isIncluded: true },
+      { label: "50 Credits", isIncluded: true },
       { label: "Full Access to Services", isIncluded: true },
       { label: "Priority Customer Support", isIncluded: true },
       { label: "Priority Updates", isIncluded: false }
@@ -94,9 +90,9 @@ export const plans = [
     name: "Premium Package",
     icon: "/assets/premium-icon.png",
     price: 199,
-    credits: 1000,
+    credits: 500,
     inclusions: [
-      { label: "1000 Credits", isIncluded: true },
+      { label: "500 Credits", isIncluded: true },
       { label: "Full Access to Services", isIncluded: true },
       { label: "Priority Customer Support", isIncluded: true },
       { label: "Priority Updates", isIncluded: true }
@@ -141,6 +137,18 @@ export const toolType = {
     icon: "/assets/paint-roller.png"
   }
 };
+
+export const AboutUs = [
+  "We are three B.Tech CSE students who love to create perfect and groundbreaking things.",
+  "We started out with a common goal: to use tech to build tools that can change how we work with digital images. Our know-how and focus on top-notch work help us to do better than people expect and to build strong bonds with those who use our tools. Everything we make - from fixing up images and filling in parts to taking out objects changing their colors, and getting rid of backgrounds - shows how much we care about doing great work and always trying to make things perfect.",
+  "We love what we do, and this pushes us to keep testing whatis possible. We think there is something special about changing a picture making it come alive, and improving it beyond what you had imagine. We have made our tools easy to use so anyone can get amazing results even if they do not know much about tech. Come along with us on this thrilling adventure as we team up to do great work. We are here to help turn your creative ideas into reality, one picture at a time.",
+  "Do not hesitate to get in touch and find out how we can work together to reach your goals and make something special."
+];
+
+export const privacyPolicy = [
+  "Welcome to Imagica. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our web application, which includes AI tools for image edits such as background remover, object remover, object recolor, image resize, restore images, and more. When you create an account, log in, or use our services, we collect personal information such as your name, email address, password (securely stored via Clerk), and user images, along with usage data like IP address, browser type, and device type. This information helps us operate, maintain, and improve our application, communicate with you, and ensure the security of our services. User images and edits are processed and stored using Cloudinary, and all other data is stored securely in MongoDB.",
+  "We do not sell, trade, or transfer your personal information to outside parties without your consent, except to trusted service providers like Clerk for authentication, Cloudinary for image processing, and MongoDB for database storage, all of whom assist us in operating our application and ensuring its security. We implement a variety of security measures, including encryption and secure servers, to protect your data. You have rights regarding your personal information, such as access, rectification, and deletion, depending on your location. Our application may contain links to third-party websites, and we encourage you to review their privacy policies. We may update our Privacy Policy periodically, and changes will be posted on this page. If you have any questions, please contact us at [Your Email Address]. By using our application, you acknowledge that you have read and understood this Privacy Policy."
+];
 
 export const aspectRatioOptions = {
   "1:1": {

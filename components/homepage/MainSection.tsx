@@ -8,27 +8,8 @@ import Image from "next/image";
 import { ChevronDownCircle, Medal } from "lucide-react";
 import ScrollToTop from "./ScrollToTop";
 
-const SkeletonLoader = () => {
-  return (
-    <div className="container mx-auto my-10 px-6 py-14 text-center">
-      <div className="animate-pulse">
-        <div className="bg-gray-300 h-12 w-3/4 mx-auto mt-4 mb-6 pt-24 rounded-lg " />
-        <div className="bg-gray-300 h-6 w-1/2 mx-auto mb-6 rounded-lg" />
-        <div className="bg-gray-300 h-12 w-1/4 mx-auto mt-4 rounded-full" />
-      </div>
-    </div>
-  );
-};
-
 const MainSection = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, []);
-
-  if (isLoading) return <SkeletonLoader />;
 
   return (
     <div

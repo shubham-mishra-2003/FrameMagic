@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -5,7 +7,7 @@ import { useTheme } from "next-themes";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import { slideIn } from "@/constants/SlideIn";
+import { Textarea } from "../ui/textarea";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -62,13 +64,11 @@ const Contact = () => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <div id="contact" className="sm:flex pt-16 min-h-screen w-full">
-      <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        initial="hidden"
-        animate="show"
-        className="w-full hidden md:flex justify-center items-center"
-      >
+    <div
+      id="contact"
+      className="flex justify-center pt-12 items-center min-h-screen w-full"
+    >
+      <div className="w-full hidden md:flex justify-center items-center">
         <Image
           src="/logo.png"
           alt="Imagica"
@@ -76,13 +76,8 @@ const Contact = () => {
           width={300}
           className="size-full"
         />
-      </motion.div>
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        initial="hidden"
-        animate="show"
-        className="flex w-full gap-8 justify-center flex-col p-7 sm:p-10"
-      >
+      </div>
+      <div className="flex w-full gap-8 justify-center flex-col py-7 sm:py-10">
         <h2
           className={`font-extrabold font-serif sm:text-3xl text-2xl lg:text-4xl ${resolvedTheme ==
           "dark"
@@ -144,7 +139,7 @@ const Contact = () => {
             >
               Enter your message
             </h3>
-            <textarea
+            <Textarea
               rows={7}
               placeholder="Type your message..."
               required
@@ -164,7 +159,7 @@ const Contact = () => {
             {sending ? "Sending..." : "Send"}
           </Button>
         </form>
-      </motion.div>
+      </div>
     </div>
   );
 };

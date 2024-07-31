@@ -2,17 +2,16 @@
 
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { plans } from "@/constants";
+import Image from "next/image";
+import { Check, X } from "lucide-react";
 
 const Pricing = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    setIsLoading(false);
   }, []);
 
   if (isLoading) {
@@ -72,139 +71,48 @@ const Pricing = () => {
   }
 
   return (
-    <div id="pricing" className="py-12">
-      <div className="container mx-auto px-4">
-        <h2
-          className={`text-3xl font-semibold text-center mb-6 ${resolvedTheme ===
-          "dark"
-            ? "text-white"
-            : "text-black"}`}
-        >
-          Pricing Plans
-        </h2>
-        <div className="flex flex-wrap justify-center">
-          <div className="w-full md:w-1/2 lg:w-1/3 p-4">
+    <div
+      id="pricing"
+      className="min-h-screen sm:px-5 md:px-10 flex justify-center items-center"
+    >
+      <div className="flex w-full flex-col gap-8">
+        <h2 className="text-3xl font-bold text-center">Pricing Plans</h2>
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">
+          {plans.map((pricing, index) =>
             <div
-              className={`border bg-${resolvedTheme === "dark"
-                ? "slate-800"
-                : "slate-100"} rounded-xl shadow-2xl p-6 relative overflow-hidden transition-transform transform hover:scale-105`}
+              key={index}
+              className={`border-2 flex flex-col justify-center items-center w-full ${resolvedTheme ===
+              "dark"
+                ? "bg-slate-800 border-slate-200"
+                : "bg-slate-100 border-slate-400"} rounded-xl shadow-2xl p-6 duration-300 hover:scale-105`}
             >
-              <h3
-                className={`text-xl font-bold mb-4 ${resolvedTheme === "dark"
-                  ? "text-white"
-                  : "text-black"}`}
-              >
-                Basic
-              </h3>
-              <p
-                className={`text-gray-600 mb-4 ${resolvedTheme === "dark"
-                  ? "text-gray-100"
-                  : "text-gray-700"}`}
-              >
-                $10/month
-              </p>
-              <ul
-                className={`text-gray-600 mb-6 ${resolvedTheme === "dark"
-                  ? "text-gray-200"
-                  : "text-gray-700"}`}
-              >
-                <li className="mb-2">Feature 1</li>
-                <li className="mb-2">Feature 2</li>
-                <li className="mb-2">Feature 3</li>
+              <Image
+                src={pricing.icon}
+                alt="pricing icon"
+                height={40}
+                width={40}
+                className={`${resolvedTheme == "dark" && 'invert'} z-0`}
+              />
+              <div className="flex flex-col justify-center items-center gap-2 m-4">
+                <h3 className="text-2xl font-semibold">
+                  {pricing.name}
+                </h3>
+                <h4 className="text-xl font-semibold text-center">
+                  {pricing.credits} credits
+                </h4>
+              </div>
+              <ul className="flex flex-col gap-4 items-center w-full px-3">
+                {pricing.inclusions.map((points, index) =>
+                  <li key={index} className="flex gap-4 justify-start w-full">
+                    {points.isIncluded
+                      ? <Check className="text-green-500" />
+                      : <X className="text-red-500" />}
+                    {points.label}
+                  </li>
+                )}
               </ul>
-              <a
-                href="#"
-                className={`block text-center ${resolvedTheme == "dark"
-                  ? "bg-gradient-to-tr from-violet-500 to-blue-500 hover:from-violet-700 hover:to-blue-700"
-                  : "bg-gradient-to-tr from-violet-700 to-blue-700 hover:from-violet-500 hover:to-blue-500"} text-white py-2 rounded-lg transition-transform transform hover:scale-105`}
-              >
-                Choose Plan
-              </a>
             </div>
-          </div>
-          <div className="w-full md:w-1/2 lg:w-1/3 p-4">
-            <div
-              className={`border bg-${resolvedTheme === "dark"
-                ? "slate-800"
-                : "slate-100"} rounded-xl shadow-2xl p-6 relative overflow-hidden transition-transform transform hover:scale-105`}
-            >
-              <h3
-                className={`text-xl font-semibold mb-4 ${resolvedTheme ===
-                "dark"
-                  ? "text-white"
-                  : "text-black"}`}
-              >
-                Standard
-              </h3>
-              <p
-                className={`text-gray-600 mb-4 ${resolvedTheme === "dark"
-                  ? "text-gray-100"
-                  : "text-gray-700"}`}
-              >
-                $20/month
-              </p>
-              <ul
-                className={`text-gray-600 mb-6 ${resolvedTheme === "dark"
-                  ? "text-gray-200"
-                  : "text-gray-700"}`}
-              >
-                <li className="mb-2">Feature 1</li>
-                <li className="mb-2">Feature 2</li>
-                <li className="mb-2">Feature 3</li>
-                <li className="mb-2">Feature 4</li>
-              </ul>
-              <a
-                href="#"
-                className={`block text-center ${resolvedTheme == "dark"
-                  ? "bg-gradient-to-tr from-violet-500 to-blue-500 hover:from-violet-700 hover:to-blue-700"
-                  : "bg-gradient-to-tr from-violet-700 to-blue-700 hover:from-violet-500 hover:to-blue-500"} text-white py-2 rounded-lg transition-transform transform hover:scale-105`}
-              >
-                Choose Plan
-              </a>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/3 p-4">
-            <div
-              className={`border bg-${resolvedTheme === "dark"
-                ? "slate-800"
-                : "slate-100"} rounded-xl shadow-2xl p-6 relative overflow-hidden transition-transform transform hover:scale-105`}
-            >
-              <h3
-                className={`text-xl font-semibold mb-4 ${resolvedTheme ===
-                "dark"
-                  ? "text-white"
-                  : "text-black"}`}
-              >
-                Premium
-              </h3>
-              <p
-                className={`text-gray-600 mb-4 ${resolvedTheme === "dark"
-                  ? "text-gray-100"
-                  : "text-gray-700"}`}
-              >
-                $30/month
-              </p>
-              <ul
-                className={`text-gray-600 mb-6 ${resolvedTheme === "dark"
-                  ? "text-gray-200"
-                  : "text-gray-700"}`}
-              >
-                <li className="mb-2">Feature 1</li>
-                <li className="mb-2">Feature 2</li>
-                <li className="mb-2">Feature 3</li>
-                <li className="mb-2">Feature 4</li>
-                <li className="mb-2">Feature 5</li>
-              </ul>
-              <a
-                href="#"
-                className={`block text-center ${resolvedTheme == "dark"
-                  ? "bg-gradient-to-tr from-violet-500 to-blue-500 hover:from-violet-700 hover:to-blue-700"
-                  : "bg-gradient-to-tr from-violet-700 to-blue-700 hover:from-violet-500 hover:to-blue-500"} text-white py-2 rounded-lg transition-transform transform hover:scale-105`}
-              >
-                Choose Plan
-              </a>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

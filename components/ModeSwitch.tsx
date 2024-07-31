@@ -5,7 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { useTheme } from 'next-themes';
 
 
-const ModeSwitch = ({ButtonSize = "w-[90px]", ContentSize = "w-28", hidden = true}) => {
+const ModeSwitch = ({ButtonSize = "w-[90px]", ContentSize = "w-28", hidden = false}) => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
@@ -43,17 +43,19 @@ const ModeSwitch = ({ButtonSize = "w-[90px]", ContentSize = "w-28", hidden = tru
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <div className={`p-2 rounded-full ${ButtonSize} ${resolvedTheme === 'dark' ? 'bg-slate-900 hover:bg-slate-800 border-slate-400' : 'bg-slate-200 border-slate-400 text-slate-900 shadow-inner hover:shadow-slate-400 hover:bg-slate-300'}`}>
-          <div className={`font-bold px-2 ${!hidden ? 'hidden' : 'flex'} lg:flex text-[13px] p-1 items-center w-full justify-between`}>
+        <div className={`p-3 rounded-full ${ButtonSize} ${resolvedTheme === 'dark' ? 'bg-slate-700 hover:bg-slate-800 border-slate-400' : 'bg-slate-200 border-slate-400 text-slate-900 shadow-inner hover:shadow-slate-400 hover:bg-slate-300'} border-slate-500 flex justify-center items-center w-fit border-2`}>
+          {hidden ?
+          <div className="font-bold px-2 gap-1 flex text-[15px] p-1 items-center w-full justify-between">
             {modes.find((mode) => mode.value === theme)?.label}
-            <ChevronsUpDown className='w-4' />
+            <ChevronsUpDown height={18} width={18} />
           </div>
-          <div className={`${hidden ? 'hidden' : 'block'} p-0 md:p-2`}>
+          :
+          <>
             {resolvedTheme == "dark" ? <Moon /> : <Sun />}
-          </div>
+          </>}
         </div>
       </PopoverTrigger>
-      <PopoverContent className={`${ContentSize} p-0 ${resolvedTheme === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-900'}`}>
+      <PopoverContent className={`${ContentSize} p-1 ${resolvedTheme === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-900'}`}>
         <Command>
           <CommandList>
             <CommandGroup>
@@ -62,7 +64,7 @@ const ModeSwitch = ({ButtonSize = "w-[90px]", ContentSize = "w-28", hidden = tru
                   key={mode.value}
                   value={mode.value}
                   onSelect={() => handleThemeChange(mode.value)}
-                  className={`${resolvedTheme === 'dark' ? 'hover:bg-slate-700 hover:shadow-black' : 'hover:bg-gray-300 hover:shadow-slate-400'} hover:shadow-inner rounded-md font-semibold cursor-pointer gap-2 flex w-full`}
+                  className={`${resolvedTheme === 'dark' ? 'hover:bg-slate-700 hover:shadow-black' : 'hover:bg-gray-300 hover:shadow-slate-400'} hover:shadow-inner rounded-md font-semibold cursor-pointer gap-2 flex w-full text-sm`}
                 >
                   <Check
                     className={`mr-2 h-4 w-4 ${theme === mode.value ? 'opacity-100' : 'opacity-0'}`}

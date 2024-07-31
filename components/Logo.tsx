@@ -1,12 +1,13 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 
 const Logo = () => {
 
   const { resolvedTheme } = useTheme();
 
   return (
-    <div className="flex justify-center gap-2 items-center">
+    <Link href="/" className="flex justify-center gap-2 items-center">
       <div className="flex w-12">
         <Image src="/logo.png" height={70} width={70} alt="logo" />
       </div>
@@ -26,7 +27,7 @@ const Logo = () => {
           By connect and team
         </h2>
       </span>
-    </div>
+    </Link>
   );
 };
 

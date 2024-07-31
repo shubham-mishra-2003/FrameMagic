@@ -35,10 +35,10 @@ const ScrollToTop = () => {
       {isVisible &&
         <button
           title="scroll to top"
-          className={`fixed z-50 bottom-[20px] right-[20px] p-3 rounded-full border-none cursor-pointer ${resolvedTheme ==
+          className={`fixed z-50 bottom-[60px] border-2 right-[20px] p-3 rounded-full cursor-pointer ${resolvedTheme ==
           "dark"
-            ? "bg-black hover:bg-gradient-to-tr from-violet-500 to-blue-500"
-            : "bg-slate-300 hover:bg-gradient-to-tr from-violet-400 to-blue-400"}`}
+            ? "bg-slate-800 hover:bg-slate-900 border-slate-500"
+            : "bg-slate-200 hover:bg-slate-300 border-slate-400"}`}
           onClick={scrollToTop}
         >
           <ChevronUp size={30} />
