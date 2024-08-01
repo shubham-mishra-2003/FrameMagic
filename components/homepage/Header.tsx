@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full p-4 px-5 flex justify-between items-center transition-transform duration-500 ${resolvedTheme ==
+      className={`fixed top-0 left-0 w-full p-4 px-5 flex justify-between items-center transition-transform duration-500 z-50 ${resolvedTheme ==
       "dark"
         ? "bg-black"
         : "bg-slate-100"} ${showHeader

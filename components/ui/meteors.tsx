@@ -23,7 +23,7 @@ export const Meteors = ({ number = 50 }: MeteorsProps) => {
   }, [number]);
 
   return (
-    <>
+    <div>
       {[...meteorStyles].map((style, idx) => (
         <span
           key={idx}
@@ -35,7 +35,7 @@ export const Meteors = ({ number = 50 }: MeteorsProps) => {
           <div className="pointer-events-none absolute top-1/2 -z-10 h-px w-[50px] -translate-y-1/2 bg-gradient-to-r from-slate-500 to-transparent" />
         </span>
       ))}
-    </>
+    </div>
   );
 };
 

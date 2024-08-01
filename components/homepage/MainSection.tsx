@@ -14,7 +14,7 @@ const MainSection = () => {
   return (
     <div
       id="home"
-      className="min-h-screen pt-28 flex flex-col justify-center items-center md:gap-10 sm:gap-8 gap-6 p-6"
+      className="min-h-screen relative pt-28 flex flex-col justify-center items-center md:gap-10 sm:gap-8 gap-6 p-6"
     >
       <Meteors />
       <div className="flex gap-3 bg-gradient-to-tr to-violet-500 from-blue-500 p-3 rounded-xl text-slate-100 font-bold">
