@@ -11,7 +11,7 @@ import FixedHeader from "@/components/FixedHeader";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Imagica AI",
+  title: "FrameMagic | Connect and team",
   description: "AI tool for images restore, Remove background, image resize, object remove from image and change color of the objects",
   icons: "/logo.png"
 };

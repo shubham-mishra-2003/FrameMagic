@@ -19,7 +19,7 @@ const DashboardCard = () => {
     >
       <BorderBeam borderWidth={10} />
       <h3 className="text-xl sm:text-2xl text-center md:text-3xl lg:text-4xl font-extrabold font-serif">
-        Unleash your creativity with Imagica AI
+        Unleash your creativity with framemagic AI
       </h3>
       <ul className="hidden sm:flex justify-between items-center w-full">
         {SideBar.slice(1, 6).map((link, index) =>

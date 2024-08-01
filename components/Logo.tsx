@@ -17,7 +17,7 @@ const Logo = () => {
             ? "to-violet-300 from-blue-500"
             : "to-violet-600 from-blue-600"} text-lg sm:text-xl md:text-2xl bg-gradient-to-tr bg-clip-text text-transparent font-bold font-serif`}
         >
-          ImagicaAI
+          FrameMagic
         </h1>
         <h2
           className={`${resolvedTheme == "dark"

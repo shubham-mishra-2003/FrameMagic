@@ -6,7 +6,7 @@ const Features = () => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <div id="features" className="pt-24 flex flex-col gap-4">
+    <div id="features" className="py-24 flex flex-col gap-4">
       <h2 className="text-4xl font-extrabold">Features</h2>
       <h3 className="sm:text-2xl text-xl font-bold">
         Unlock Your Creative Potential with Our Advanced Features

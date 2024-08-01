@@ -1,11 +1,12 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import TypingAnimation from "../magicui/typing-animation";
+import TypingAnimation from "../ui/typing-animation";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDownCircle, Medal } from "lucide-react";
 import ScrollToTop from "./ScrollToTop";
+import Meteors from "../ui/meteors";
 
 const MainSection = () => {
   const { resolvedTheme } = useTheme();
@@ -15,6 +16,7 @@ const MainSection = () => {
       id="home"
       className="min-h-screen pt-28 flex flex-col justify-center items-center md:gap-10 sm:gap-8 gap-6 p-6"
     >
+      <Meteors />
       <div className="flex gap-3 bg-gradient-to-tr to-violet-500 from-blue-500 p-3 rounded-xl text-slate-100 font-bold">
         <Medal className="text-yellow-200" /> No.1 app for image edits
       </div>
@@ -50,15 +52,15 @@ const MainSection = () => {
       {resolvedTheme == "dark"
         ? <Image
             src="/HomeDark.png"
-            alt="imagica"
+            alt="framemagic"
             height={900}
             width={900}
             className="border-2 sm:flex hidden border-slate-500 rounded-xl w-[800px] hover:scale-105 duration-300"
           />
         : <Image
-            src="/imagicaHome.png"
-            alt="imagica"
-            height={900}
+            src="/HomeLight.png"
+            alt="framemagic"
+            height={400}
             width={900}
             className="border-2 sm:flex hidden border-slate-500 rounded-xl w-[800px] hover:scale-105 duration-300"
           />}
@@ -66,14 +68,14 @@ const MainSection = () => {
       {resolvedTheme == "dark"
         ? <Image
             src="/phoneDark.png"
-            alt="imagica"
+            alt="framemagic"
             height={500}
             width={500}
             className="border-2 flex sm:hidden border-slate-500 rounded-xl w-full hover:scale-105 duration-300"
           />
         : <Image
             src="/phoneLight.png"
-            alt="imagica"
+            alt="framemagic"
             height={400}
             width={500}
             className="border-2 flex sm:hidden border-slate-500 rounded-xl w-full hover:scale-105 duration-300"

@@ -24,43 +24,43 @@ const About = () => {
       <h1 className="text-xl w-full text-start font-bold">
         Experience the future of image editing.
       </h1>
-      <div className="md:flex-row flex flex-col gap-10 justify-center items-center">
+      <div className="md:flex-row w-full flex flex-col gap-10 justify-center items-center">
         {resolvedTheme == "dark"
-          ? <div className="w-fit md:w-full flex justify-center items-center border rounded-lg p-3">
+          ? <div className="w-fit md:w-full flex justify-center items-center border-2 rounded-lg p-1">
               <Image
                 src="/aboutSection-dark.png"
                 alt="about"
                 height={300}
                 width={900}
-                className="w-full hidden sm:flex"
+                className="w-full hidden sm:flex rounded-lg"
               />
               <Image
-                src="/aboutSection-pone-dark.png"
+                src="/aboutSection-phone-dark.png"
                 alt="about"
                 height={300}
                 width={300}
                 className="w-60 sm:hidden"
               />
             </div>
-          : <div className="w-fit md:w-full flex justify-center items-center border rounded-lg p-3">
+          : <div className="w-fit md:w-full flex justify-center items-center border-2 rounded-lg p-1">
               <Image
                 src="/aboutSection-light.png"
                 alt="about"
                 height={300}
                 width={900}
-                className="w-full hidden sm:flex"
+                className="w-full hidden sm:flex rounded-lg"
               />
               <Image
-                src="/aboutSection-pone-light.png"
+                src="/aboutSection-phone-light.png"
                 alt="about"
                 height={300}
                 width={300}
                 className="w-60 sm:hidden"
               />
             </div>}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 w-full">
           <h2 className="text-[14px] sm:text-lg font-semibold">
-            Welcome to Imagica, your one-stop solution for all your image
+            Welcome to FrameMagic, your one-stop solution for all your image
             editing needs! Whether you&apos;re a professional photographer, a
             hobbyist, or someone looking to enhance personal photos, our
             advanced tools are designed to help you achieve stunning results

@@ -60,16 +60,16 @@ const Header = () => {
         <div className="hidden lg:flex gap-2 ">
           <Link
             href="/login"
-            className={`flex justify-center items-center rounded-full text-lg p-2 px-3 shadow-inner w-full border-2 ${resolvedTheme ==
+            className={`flex justify-center items-center rounded-lg text-lg p-1 px-3 shadow-inner w-full ${resolvedTheme ==
             "dark"
-              ? "hover:bg-slate-100 hover:text-black shadow-black border-slate-500"
+              ? "hover:bg-slate-100 hover:text-black shadow-slate-500 border-slate-500"
               : "hover:bg-slate-900 shadow-slate-400 hover:text-slate-100 border-slate-500"}`}
           >
             Login
           </Link>
           <Link
             href="/register"
-            className={`flex justify-center items-center rounded-full text-lg p-2 px-3 shadow-inner w-full border-2 ${resolvedTheme ==
+            className={`flex justify-center items-center rounded-lg text-lg p-1 px-3 shadow-inner w-full ${resolvedTheme ==
             "dark"
               ? "bg-slate-700 hover:bg-slate-800 shadow-black border-slate-500"
               : "bg-slate-200 hover:bg-slate-300 shadow-slate-400 border-slate-500"}`}

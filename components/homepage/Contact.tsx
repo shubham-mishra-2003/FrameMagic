@@ -71,7 +71,7 @@ const Contact = () => {
       <div className="w-full hidden md:flex justify-center items-center">
         <Image
           src="/logo.png"
-          alt="Imagica"
+          alt="framemagic"
           height={300}
           width={300}
           className="size-full"
