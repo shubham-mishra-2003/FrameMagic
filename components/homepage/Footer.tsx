@@ -45,25 +45,30 @@ const Footer = () => {
 
   return (
     <div
-      className={`flex flex-col gap-3 py-5 justify-center items-center ${resolvedTheme ==
+      className={`flex gap-2 py-4 justify-center items-center ${resolvedTheme ==
       "dark"
         ? "bg-black"
         : "bg-slate-100"}`}
     >
-      <div className="flex p-3 justify-center gap-7 items-center">
-        <Logo />
-        <div className="text-sm sm:text-[16px] md:text-lg font-bold">
+      <Logo />
+      <div className="flex flex-col p-3 justify-center gap-2 items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-3">
+          <Dialog
+            openButton="About Us"
+            title="About Us"
+            message={aboutMessage}
+          />
+          <div className="w-[2px] sm:flex hidden rounded-full bg-slate-500 py-3" />
+          <div className="h-[2px] sm:hidden rounded-full bg-slate-500 mt-1 px-3" />
+          <Dialog
+            openButton="Privacy Policy"
+            title="Privacy Policy"
+            message={privacyMessage}
+          />
+        </div>
+        <div className="flex justify-between items-center text-sm sm:text-[16px] md:text-lg font-bold">
           &copy; All rights reserved, By Connect and Team
         </div>
-      </div>
-      <div className="flex justify-between items-center gap-3">
-        <Dialog openButton="About Us" title="About Us" message={aboutMessage} />
-        <div className="w-[2px] rounded-full bg-slate-500 py-3" />
-        <Dialog
-          openButton="Privacy Policy"
-          title="Privacy Policy"
-          message={privacyMessage}
-        />
       </div>
     </div>
   );

@@ -37,12 +37,12 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="flex gap-12 bg-black px-20 overflow-hidden flex-col justify-center items-center h-screen pt-24">
-          <div className="bg-slate-200 h-32 w-40 rounded-lg" />
-          <div className="bg-slate-200 h-32 w-full rounded-lg" />
-          <div className="bg-slate-200 h-32 w-72 rounded-lg" />
-          <div className="bg-slate-200 h-32 w-32 rounded-lg" />
-          <div className="bg-slate-200 h-10 w-56 rounded-lg" />
-          <div className="bg-slate-200 h-[300px] w-full rounded-lg" />
+          <div className="bg-slate-200 animate-pulse h-32 w-40 rounded-lg" />
+          <div className="bg-slate-200 h-32 w-full animate-pulse rounded-lg" />
+          <div className="bg-slate-200 h-32 w-72 rounded-lg animate-pulse" />
+          <div className="bg-slate-200 h-32 w-32 rounded-lg animate-pulse" />
+          <div className="bg-slate-200 h-10 w-56 rounded-lg animate-pulse" />
+          <div className="bg-slate-200 h-[300px] w-full rounded-lg animate-pulse" />
         </div>
       </div>
     );
