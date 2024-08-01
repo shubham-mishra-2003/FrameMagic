@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronDownCircle, Medal } from "lucide-react";
 import ScrollToTop from "./ScrollToTop";
-import Meteors from "../ui/meteors";
 
 const MainSection = () => {
   const { resolvedTheme } = useTheme();
@@ -16,7 +15,6 @@ const MainSection = () => {
       id="home"
       className="min-h-screen relative pt-28 flex flex-col justify-center items-center md:gap-10 sm:gap-8 gap-6 p-6"
     >
-      <Meteors />
       <div className="flex gap-3 bg-gradient-to-tr to-violet-500 from-blue-500 p-3 rounded-xl text-slate-100 font-bold">
         <Medal className="text-yellow-200" /> No.1 app for image edits
       </div>
