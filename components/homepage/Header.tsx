@@ -138,7 +138,7 @@ const Header = () => {
             </div>
             <div className="h-[2px] lg:hidden bg-slate-500 w-full rounded-full" />
             <ModeSwitch
-              ButtonSize="w-full"
+              ButtonSize="w-full h-[45px]"
               ContentSize="w-[200px]"
               hidden={true}
             />
