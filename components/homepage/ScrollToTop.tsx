@@ -35,7 +35,7 @@ const ScrollToTop = () => {
       {isVisible &&
         <button
           title="scroll to top"
-          className={`fixed z-50 bottom-[60px] border-2 right-[20px] p-3 rounded-full cursor-pointer ${resolvedTheme ==
+          className={`fixed z-50 bottom-[20px] border-2 right-[20px] p-3 rounded-full cursor-pointer ${resolvedTheme ==
           "dark"
             ? "bg-slate-800 hover:bg-slate-900 border-slate-500"
             : "bg-slate-200 hover:bg-slate-300 border-slate-400"}`}
