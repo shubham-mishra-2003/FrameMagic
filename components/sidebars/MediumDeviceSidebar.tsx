@@ -16,7 +16,7 @@ const MediumDeviceSidebar = () => {
 
   useEffect(() => {
     setLoading(false);
-  });
+  }, []);
 
   if (loading) return <Loader />;
 
@@ -84,3 +84,4 @@ const Loader = () => {
     </div>
   );
 };
+

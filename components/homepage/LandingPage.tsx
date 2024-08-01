@@ -48,7 +48,7 @@ const LandingPage = () => {
     );
 
   return (
-    <div>
+    <>
       <div className="sm:px-10 px-6">
         <Header />
         <MainSection />
@@ -58,7 +58,7 @@ const LandingPage = () => {
         <Contact />
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -22,17 +22,14 @@ const Header = () => {
     }
   };
 
-  useEffect(
-    () => {
-      if (typeof window !== "undefined") {
-        window.addEventListener("scroll", controlHeader);
-        return () => {
-          window.removeEventListener("scroll", controlHeader);
-        };
-      }
-    },
-    [lastScrollY]
-  );
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlHeader);
+      return () => {
+        window.removeEventListener("scroll", controlHeader);
+      };
+    }
+  });
 
   const { resolvedTheme } = useTheme();
 

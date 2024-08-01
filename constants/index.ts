@@ -1,9 +1,9 @@
 import {
-  backgroundRemove,
-  imageResize,
-  imageRestore,
-  objectRecolor,
-  objectRemove
+  BackgroundRemove,
+  ImageResize,
+  ImageRestore,
+  ObjectRecolor,
+  ObjectRemove
 } from "@/components/homepage/FeaturesImages";
 
 const SideBar = [
@@ -117,7 +117,7 @@ export const toolType = {
   },
   fill: {
     type: "fill",
-    title: "Generative Fill",
+    title: "Image Resize",
     subTitle: "Enhance an image's dimensions using AI outpainting",
     config: { fillBackground: true },
     icon: "/assets/atom.png"
@@ -141,13 +141,13 @@ export const toolType = {
 export const AboutUs = [
   "We are three B.Tech CSE students who love to create perfect and groundbreaking things.",
   "We started out with a common goal: to use tech to build tools that can change how we work with digital images. Our know-how and focus on top-notch work help us to do better than people expect and to build strong bonds with those who use our tools. Everything we make - from fixing up images and filling in parts to taking out objects changing their colors, and getting rid of backgrounds - shows how much we care about doing great work and always trying to make things perfect.",
-  "We love what we do, and this pushes us to keep testing whatis possible. We think there is something special about changing a picture making it come alive, and improving it beyond what you had imagine. We have made our tools easy to use so anyone can get amazing results even if they do not know much about tech. Come along with us on this thrilling adventure as we team up to do great work. We are here to help turn your creative ideas into reality, one picture at a time.",
+  "We love what we do, and this pushes us to keep testing what's possible. We think there is something special about changing a picture making it come alive, and improving it beyond what you had imagine. We have made our tools easy to use so anyone can get amazing results even if they do not know much about tech. Come along with us on this thrilling adventure as we team up to do great work. We are here to help turn your creative ideas into reality, one picture at a time.",
   "Do not hesitate to get in touch and find out how we can work together to reach your goals and make something special."
 ];
 
 export const privacyPolicy = [
   "Welcome to Imagica. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our web application, which includes AI tools for image edits such as background remover, object remover, object recolor, image resize, restore images, and more. When you create an account, log in, or use our services, we collect personal information such as your name, email address, password (securely stored via Clerk), and user images, along with usage data like IP address, browser type, and device type. This information helps us operate, maintain, and improve our application, communicate with you, and ensure the security of our services. User images and edits are processed and stored using Cloudinary, and all other data is stored securely in MongoDB.",
-  "We do not sell, trade, or transfer your personal information to outside parties without your consent, except to trusted service providers like Clerk for authentication, Cloudinary for image processing, and MongoDB for database storage, all of whom assist us in operating our application and ensuring its security. We implement a variety of security measures, including encryption and secure servers, to protect your data. You have rights regarding your personal information, such as access, rectification, and deletion, depending on your location. Our application may contain links to third-party websites, and we encourage you to review their privacy policies. We may update our Privacy Policy periodically, and changes will be posted on this page. If you have any questions, please contact us at [Your Email Address]. By using our application, you acknowledge that you have read and understood this Privacy Policy."
+  "We do not sell, trade, or transfer your personal information to outside parties without your consent, except to trusted service providers like Clerk for authentication, Cloudinary for image processing, and MongoDB for database storage, all of whom assist us in operating our application and ensuring its security. We implement a variety of security measures, including encryption and secure servers, to protect your data. You have rights regarding your personal information, such as access, rectification, and deletion, depending on your location. Our application may contain links to third-party websites, and we encourage you to review their privacy policies. We may update our Privacy Policy periodically, and changes will be posted on this page. If you have any questions, please contact us at connectandteam@gmail.com. By using our application, you acknowledge that you have read and understood this Privacy Policy."
 ];
 
 export const aspectRatioOptions = {
@@ -192,7 +192,7 @@ export const features = [
       "Enhance colors and details",
       "Restore faded photographs"
     ],
-    image: imageRestore,
+    image: ImageRestore,
     imageSide: "left"
   },
   {
@@ -205,7 +205,7 @@ export const features = [
       "Batch resizing for multiple images",
       "Aspect ratio control"
     ],
-    image: imageResize,
+    image: ImageResize,
     imageSide: "right"
   },
   {
@@ -218,7 +218,7 @@ export const features = [
       "Preserve image quality",
       "Ideal for removing people, logos, or any distractions"
     ],
-    image: objectRemove,
+    image: ObjectRemove,
     imageSide: "left"
   },
   {
@@ -231,7 +231,7 @@ export const features = [
       "Supports a wide range of colors",
       "Easy-to-use interface"
     ],
-    image: objectRecolor,
+    image: ObjectRecolor,
     imageSide: "right"
   },
   {
@@ -244,7 +244,7 @@ export const features = [
       "Replace backgrounds with custom images",
       "Supports complex edges like hair and fur"
     ],
-    image: backgroundRemove,
+    image: BackgroundRemove,
     imageSide: "left"
   }
 ];

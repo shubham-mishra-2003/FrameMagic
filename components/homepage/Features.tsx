@@ -11,7 +11,7 @@ const Features = () => {
       <h3 className="sm:text-2xl text-xl font-bold">
         Unlock Your Creative Potential with Our Advanced Features
       </h3>
-      <div className="mt-5 gap-28 flex flex-col justify-center items-center">
+      <div className="mt-5 gap-28 flex flex-col justify-center items-center -z-10">
         {features.map((feature, index) =>
           <div
             key={index}

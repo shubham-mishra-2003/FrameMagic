@@ -202,7 +202,7 @@ const TransformationForm = ({
     if(image && (type === 'restore' || type === 'removeBackground')){
       setNewTransformation(toolsType.config)
     }
-  }, [image, toolsType.config])
+  }, [image, toolsType.config, type])
 
   if(Loading) return <PageLoading />
 

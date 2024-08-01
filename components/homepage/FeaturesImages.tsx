@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { useTheme } from "next-themes";
 
-export const imageRestore = () => {
+export const ImageRestore = () => {
   return (
     <Image
       className="transform transition-transform duration-300 hover:scale-105"
@@ -21,7 +21,7 @@ export const imageRestore = () => {
   );
 };
 
-export const imageResize = () => {
+export const ImageResize = () => {
   return (
     <ResizablePanelGroup
       direction="horizontal"
@@ -54,7 +54,7 @@ export const imageResize = () => {
   );
 };
 
-export const objectRemove = () => {
+export const ObjectRemove = () => {
   const { resolvedTheme } = useTheme();
   return (
     <>
@@ -77,7 +77,7 @@ export const objectRemove = () => {
   );
 };
 
-export const objectRecolor = () => {
+export const ObjectRecolor = () => {
   return (
     <Image
       className="transform transition-transform duration-300 hover:scale-105 w-full"
@@ -89,7 +89,7 @@ export const objectRecolor = () => {
   );
 };
 
-export const backgroundRemove = () => {
+export const BackgroundRemove = () => {
   const { resolvedTheme } = useTheme();
   return (
     <>

@@ -61,7 +61,7 @@ const About = () => {
         <div className="flex flex-col gap-2">
           <h2 className="text-[14px] sm:text-lg font-semibold">
             Welcome to Imagica, your one-stop solution for all your image
-            editing needs! Whether you're a professional photographer, a
+            editing needs! Whether you&apos;re a professional photographer, a
             hobbyist, or someone looking to enhance personal photos, our
             advanced tools are designed to help you achieve stunning results
             with ease. Dive into a world where creativity meets technology.

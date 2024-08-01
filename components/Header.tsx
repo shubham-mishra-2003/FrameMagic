@@ -8,7 +8,7 @@ const DashboardHeader = ({ title = "", subtitle = "" }) => {
 
   useEffect(() => {
     setLoading(false);
-  });
+  },[]);
 
   const { resolvedTheme } = useTheme();
 

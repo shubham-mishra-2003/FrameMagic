@@ -77,7 +77,7 @@ const Contact = () => {
           className="size-full"
         />
       </div>
-      <div className="flex w-full gap-8 justify-center flex-col py-7 sm:py-10">
+      <div className="flex w-full gap-8 justify-center items-center flex-col py-7 sm:py-10">
         <h2
           className={`font-extrabold font-serif sm:text-3xl text-2xl lg:text-4xl ${resolvedTheme ==
           "dark"
