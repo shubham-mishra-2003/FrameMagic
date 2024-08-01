@@ -37,7 +37,7 @@ export const DeleteConfirmation = ({ imageId }: { imageId: string }) => {
       </AlertDialogTrigger>
 
       <AlertDialogContent
-        className={`flex flex-col gap-10 ${resolvedTheme == "dark"
+        className={`flex max-w-[450px] flex-col gap-10 ${resolvedTheme == "dark"
           ? "bg-slate-800 shadow-slate-900"
           : "bg-slate-100 shadow-slate-400"} shadow-inner`}
       >

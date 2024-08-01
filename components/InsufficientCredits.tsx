@@ -25,7 +25,7 @@ export const InsufficientCredits = () => {
       <AlertDialogContent
         className={`${resolvedTheme == "dark"
           ? "bg-slate-900"
-          : "bg-slate-100"} p-5 flex flex-col`}
+          : "bg-slate-100"} max-w-[400px] p-5 flex flex-col`}
       >
         <AlertDialogHeader>
           <div className="flex items-center justify-between">
