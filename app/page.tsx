@@ -1,18 +1,19 @@
-import { auth, SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Dashboard from "@/components/Dashboard";
 import LandingPage from "@/components/homepage/LandingPage";
+import SplashScreenWrapper from "@/components/SplashScreenWrapper";
 
-const page = () => {
+const Page = () => {
   return (
-    <>
+    <SplashScreenWrapper>
       <SignedOut>
         <LandingPage />
       </SignedOut>
       <SignedIn>
         <Dashboard />
       </SignedIn>
-    </>
+    </SplashScreenWrapper>
   );
 };
 
-export default page;
+export default Page;

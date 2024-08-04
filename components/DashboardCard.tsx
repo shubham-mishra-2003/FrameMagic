@@ -48,6 +48,7 @@ const DashboardCard = () => {
       <ul className="flex sm:hidden justify-between item-center gap-1 w-full px-3">
         {SideBar.slice(1, 6).map((link, index) =>
           <Link
+            href={link.href}
             key={index}
             className={`p-2 cursor-pointer rounded-full bg-slate-200 shado-inner shadow-slate-400 ${resolvedTheme ==
             "dark"
