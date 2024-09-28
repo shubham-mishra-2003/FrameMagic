@@ -1,29 +1,24 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import SplashScreen from '@/components/SplashScreen';
+import React, { useState, useEffect } from "react";
+import SplashScreen from "@/components/SplashScreen";
 
 interface SplashScreenWrapperProps {
   children: React.ReactNode;
 }
 
-const SplashScreenWrapper: React.FC<SplashScreenWrapperProps> = ({ children }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+const SplashScreenWrapper: React.FC<SplashScreenWrapperProps> = ({
+  children
+}) => {
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 2000); // 2000 milliseconds = 2 seconds
-
-    return () => clearTimeout(timer);
+    setLoading(false);
   }, []);
 
-  return (
-    <>
-      {!isLoaded && <SplashScreen onLoaded={() => setIsLoaded(true)} />}
-      {isLoaded && children}
-    </>
-  );
+  return loading
+    ? <SplashScreen onLoaded={() => setLoading(true)} />
+    : children;
 };
 
 export default SplashScreenWrapper;
