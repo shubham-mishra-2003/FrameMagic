@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import Sidebar from "@/components/sidebars/Sidebar";
 import MediumDeviceSidebar from "@/components/sidebars/MediumDeviceSidebar";
 import FixedHeader from "@/components/FixedHeader";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,6 +46,7 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
+      <Analytics />
     </ClerkProvider>
   );
 }
